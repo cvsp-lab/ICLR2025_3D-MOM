@@ -19,6 +19,7 @@
 
 <p align="center">
   <a href=" https://inhwanjin.github.io/ICLR_3D_MOM/"><strong><code>Project Page</code></strong></a>
+  <a href="https://www.pnu-cvsp.com/prof"><strong><code>Kyeongbo Kong</strong><code></a>
 </p>
 
 The code will be released after the paper is accepted.
