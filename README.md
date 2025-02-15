@@ -21,6 +21,9 @@
   <a href="https://inhwanjin.github.io/ICLR_3D_MOM/"><strong><code>Project Page</code></strong></a>
 </p>
 
+<div align='center'>
+  <br><img src="3D-MOM_title.gif" width=70%>
+  
 The code will be released after the paper is accepted.
 
 <br>
