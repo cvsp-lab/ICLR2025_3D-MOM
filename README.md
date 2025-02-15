@@ -1,4 +1,4 @@
-<h2 align="center">>Optimizing 4D Gaussians for Dynamic Scene Video<br>from Single Landscape Images</h2>
+<h2 align="center">Optimizing 4D Gaussians for Dynamic Scene Video<br>from Single Landscape Images</h2>
 <p align="center">
   <a href="https://www.pnu-cvsp.com/members/inhwan"><strong>In-Hwan Jin</strong></a>
   ·  
@@ -17,8 +17,9 @@
   ICLR 2025
 </p>
 
-  
-Our additional results can be found at [this link](https://gramnard.github.io/ICLR_3D_MOM/)
+<p align="center">
+  <a href=" https://inhwanjin.github.io/ICLR_3D_MOM/"><strong><code>Project Page</code></strong></a>
+</p>
 
 The code will be released after the paper is accepted.
 
