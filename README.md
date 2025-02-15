@@ -23,10 +23,10 @@
 
 <div align='center'>
   <br><img src="3D-MOM_title.gif" width=70%>
-    <br>Our Generated Dynamic Scene Video.
+  <br>Generated Dynamic Scene Video from 3D-MOM.
 </div>
 
-<br>"The code will be available soon."
 
-<br>
+## Release Roadmap
 
+- [ ] Code (around March 2025)
