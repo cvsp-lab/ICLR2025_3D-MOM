@@ -23,9 +23,10 @@
 
 <div align='center'>
   <br><img src="3D-MOM_title.gif" width=70%>
-  
-The code will be released after the paper is accepted.
+    <br>Our Generated Dynamic Scene Video.
+</div>
+
+<br>"The code will be available soon."
 
 <br>
 
-</div>
