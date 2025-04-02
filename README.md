@@ -58,13 +58,9 @@ pip install -e submodules/simple-knn
 
 
 ### Download Checkpoints
-We use the pre-trained Flow estimation and Video generator model. You can download them [here](https://github.com/xingyi-li/3d-cinemagraphy?tab=readme-ov-file) and [here](https://github.com/jeolpyeoni/StyleCineGAN).
+We use the pre-trained **Flow Estimation Model** and **Video Generator Model**. You can download them at [3d-cinemagraphy](https://github.com/xingyi-li/3d-cinemagraphy?tab=readme-ov-file) for the Flow Estimation Model and [StyleCineGAN](https://github.com/jeolpyeoni/StyleCineGAN) for the Video Generator Model.
 
-After downloading, place the models in the `ckpt` folder inside the respective directories under `thirdparty`.
-
-We use the pre-trained **Flow Estimation Model** and **Video Generator Model**. You can download the Flow Estimation Model [here](https://github.com/xingyi-li/3d-cinemagraphy?tab=readme-ov-file) and the Video Generator Model [here](https://github.com/jeolpyeoni/StyleCineGAN).
-
-After downloading, place the models in the `ckpt` folder inside the respective directories under `thirdparty`.
+After downloading, place the models in the `ckpts` folder inside the respective directories under `thirdparty`.
 
 ## Preprocess Datasets
 
