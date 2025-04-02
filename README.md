@@ -19,9 +19,7 @@
 
 <p align="center">
   <a href="https://cvsp-lab.github.io/ICLR2025_3D-MOM/"><strong><code>Project Page</code></strong></a>
-</p>
-<p align="center">
-  <a href="https://iclr.cc/virtual/2025/poster/30162"><strong><code>Paper</code></strong></a>
+  <a href="https://iclr.cc/virtual/2025/poster/30162"><strong><code>ICLR Paper</code></strong></a>
 </p>
 <div align='center'>
   <br><img src="3D-MOM_title.gif" width=70%>
