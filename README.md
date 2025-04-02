@@ -18,9 +18,11 @@
 </p>
 
 <p align="center">
-  <a href="https://inhwanjin.github.io/ICLR_3D_MOM/"><strong><code>Project Page</code></strong></a>
+  <a href="https://cvsp-lab.github.io/ICLR2025_3D-MOM/"><strong><code>Project Page</code></strong></a>
 </p>
-
+<p align="center">
+  <a href="https://iclr.cc/virtual/2025/poster/30162"><strong><code>Paper</code></strong></a>
+</p>
 <div align='center'>
   <br><img src="3D-MOM_title.gif" width=70%>
   <br>Generated Dynamic Scene Video from 3D-MOM.
