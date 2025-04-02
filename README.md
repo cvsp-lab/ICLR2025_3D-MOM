@@ -54,8 +54,6 @@ The remaining packages can be installed with:
 ```shell
 pip install -e submodules/depth-diff-gaussian-rasterization
 pip install -e submodules/simple-knn
-<!-- pip install --upgrade setuptools cython wheel
-pip install -r requirements.txt -->
 ```
 
 
