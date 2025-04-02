@@ -57,10 +57,25 @@ pip install -e submodules/simple-knn
 ```
 
 
-## Usage
+### Download Checkpoints
 
 
 
-## Release
+## Preprocess Datasets
 
-- [ ] Code (around March 2025)
+
+## Training
+
+
+
+## 📖 Citation
+<!-- If you find this code useful for your research, please consider to cite our paper:) -->
+
+```bibtex
+@inproceedings{jinoptimizing,
+  title={Optimizing 4D Gaussians for Dynamic Scene Video from Single Landscape Images},
+  author={Jin, In-Hwan and Choo, Haesoo and Jeong, Seong-Hun and Heemoon, Park and Kim, Junghwan and Kwon, Oh-joon and Kong, Kyeongbo},
+  booktitle={The Thirteenth International Conference on Learning Representations},
+  year={2025}
+}
+```
