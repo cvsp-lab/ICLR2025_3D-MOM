@@ -62,6 +62,9 @@ We use the pre-trained Flow estimation and Video generator model. You can downlo
 
 After downloading, place the models in the `ckpt` folder inside the respective directories under `thirdparty`.
 
+We use the pre-trained **Flow Estimation Model** and **Video Generator Model**. You can download the Flow Estimation Model [here](https://github.com/xingyi-li/3d-cinemagraphy?tab=readme-ov-file) and the Video Generator Model [here](https://github.com/jeolpyeoni/StyleCineGAN).
+
+After downloading, place the models in the `ckpt` folder inside the respective directories under `thirdparty`.
 
 ## Preprocess Datasets
 
