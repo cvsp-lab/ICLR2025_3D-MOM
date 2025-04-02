@@ -62,7 +62,7 @@ We use the pre-trained **Flow Estimation Model** and **Video Generator Model**. 
 
 After downloading, place the models in the `ckpts` folder inside the respective directories under `thirdparty`.
 
-## Preprocess Datasets
+## Preprocess Data
 Firstly, use [labelme](https://github.com/wkentaro/labelme) to specify the target regions (masks) and desired movement directions (hints): 
 ```shell
 conda activate 3D-MOM
