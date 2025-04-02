@@ -27,6 +27,22 @@
   <br>Generated Dynamic Scene Video from 3D-MOM.
 </div>
 
+## Environment setup 
+```
+git clone https://github.com/InHwanJin/3DMOM.git
+cd 3d-MOM
+git submodule update --init --recursive
+conda create -n 3D-MOM python=3.7 
+conda activate Gaussians4D
+
+pip install -e submodules/depth-diff-gaussian-rasterization
+pip install -e submodules/simple-knn
+```
+In our environment, we use pytorch=2.4.1+cu121
+
+## Usage
+
+
 
 ## Release
 
