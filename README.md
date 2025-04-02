@@ -27,18 +27,37 @@
   <br>Generated Dynamic Scene Video from 3D-MOM.
 </div>
 
-## Environment setup 
-```
+## Setup
+
+### Environment Setup
+Clone the source code of this repo.
+```shell
 git clone https://github.com/InHwanJin/3DMOM.git
 cd 3d-MOM
 git submodule update --init --recursive
+```
+
+Installation through pip is recommended. First, set up your Python environment:
+```shell
 conda create -n 3D-MOM python=3.7 
 conda activate Gaussians4D
+```
+Make sure to install CUDA and PyTorch versions that match your CUDA environment. We've tested on NVIDIA GeForce RTX 3090 with PyTorch  version 1.13.1.
+Please refer https://pytorch.org/ for further information.
 
+```shell
+pip install torch
+```
+
+The remaining packages can be installed with:
+
+```shell
 pip install -e submodules/depth-diff-gaussian-rasterization
 pip install -e submodules/simple-knn
+<!-- pip install --upgrade setuptools cython wheel
+pip install -r requirements.txt -->
 ```
-In our environment, we use pytorch=2.4.1+cu121
+
 
 ## Usage
 
