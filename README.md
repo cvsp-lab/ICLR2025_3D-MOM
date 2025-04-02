@@ -63,6 +63,23 @@ We use the pre-trained **Flow Estimation Model** and **Video Generator Model**. 
 After downloading, place the models in the `ckpts` folder inside the respective directories under `thirdparty`.
 
 ## Preprocess Datasets
+Firstly, use [labelme](https://github.com/wkentaro/labelme) to specify the target regions (masks) and desired movement directions (hints): 
+```shell
+conda activate 3D-MOM
+cd demo/0/
+labelme image.png
+```
+A screenshot here:
+![labelme](assets/labelme.png)
+
+It is recommended to specify **short** hints rather than long hints to avoid artifacts. Please follow [labelme](https://github.com/wkentaro/labelme) for detailed instructions if needed.
+
+After that, we can obtain an image.json file. Our next step is to convert the annotations stored in JSON format into datasets that can be used by our method:
+```shell
+labelme_json_to_dataset image.json  # this will generate a folder image_json
+cd ../../
+python scripts/generate_mask.py --inputdir demo/0/image_json
+```
 
 
 ## Training
