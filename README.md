@@ -99,10 +99,11 @@ python train_4DGS.py --input_dir demo/scene_0 --flow_scale 2
 python render_4DGS.py --input_dir demo/scene_0
 
 ```
-- `flow_scale`: flow scale difference to Gaussians.
+- `flow_scale`: scale difference 3D motion(Point Cloud) and Gaussians.
+Results will be saved to the `input_dir/video`.
 
 ## 📖 Citation
-<!-- If you find this code useful for your research, please consider to cite our paper:) -->
+If you find this code useful for your research, please consider to cite our paper:)
 
 ```bibtex
 @inproceedings{jinoptimizing,
