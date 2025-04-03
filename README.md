@@ -77,7 +77,7 @@ It is recommended to specify **short** hints rather than long hints to avoid art
 
 After that, we can obtain an image.json file. Our next step is to convert the annotations stored in JSON format into datasets that can be used by our method:
 ```shell
-# this will generate a folder image_json
+# this will generate a folder image_json.
 labelme_json_to_dataset image.json
 cd ../../
 python scripts/generate_mask.py --inputdir demo/0/image_json
@@ -87,7 +87,7 @@ python scripts/generate_mask.py --inputdir demo/0/image_json
 ## Training
 For generate multi-view images and optimize 3D motion, run
 ```shell
-# First, generate multi-view image and flow from single image 
+# First, generate multi-view image and flow from single image.
 python train_motion.py --input_dir demo/scene_0
 ```
 - `input_dir`: input folder that contains src images.
