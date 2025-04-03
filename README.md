@@ -77,14 +77,15 @@ It is recommended to specify **short** hints rather than long hints to avoid art
 
 After that, we can obtain an image.json file. Our next step is to convert the annotations stored in JSON format into datasets that can be used by our method:
 ```shell
-labelme_json_to_dataset image.json  # this will generate a folder image_json
+# this will generate a folder image_json
+labelme_json_to_dataset image.json
 cd ../../
 python scripts/generate_mask.py --inputdir demo/0/image_json
 ```
 
 
 ## Training
-For generate multi-view images and optimize 3d motion, run
+For generate multi-view images and optimize 3D motion, run
 ```shell
 # First, generate multi-view image and flow from single image 
 python train_motion.py --input_dir demo/scene_0
@@ -93,9 +94,9 @@ python train_motion.py --input_dir demo/scene_0
 
 For optimize 4D Gaussians and rendering dynamic scene video, run
 ```shell
-# Second, reconstruct 4d scene from generated images and motions 
+# Second, reconstruct 4D scene from generated images and motions. 
 python train_4DGS.py --input_dir demo/scene_0 --flow_scale 2
-
+# Finally, render. 
 python render_4DGS.py --input_dir demo/scene_0
 
 ```
