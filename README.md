@@ -67,7 +67,7 @@ After downloading, place the models in the `ckpts` folder inside the respective 
 Firstly, use [labelme](https://github.com/wkentaro/labelme) to specify the target regions (masks) and desired movement directions (hints): 
 ```shell
 conda activate 3D-MOM
-cd demo/0/
+cd demo/scene_0/
 labelme image.png
 ```
 A screenshot here:
