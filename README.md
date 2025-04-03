@@ -101,6 +101,7 @@ python render_4DGS.py --input_dir demo/scene_0
 
 ```
 - `flow_scale`: scale difference 3D motion(Point Cloud) and Gaussians.
+
 Results will be saved to the `input_dir/video`.
 
 ## 📖 Citation
