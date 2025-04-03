@@ -18,15 +18,83 @@
 </p>
 
 <p align="center">
-  <a href="https://inhwanjin.github.io/ICLR_3D_MOM/"><strong><code>Project Page</code></strong></a>
+  <a href="https://cvsp-lab.github.io/ICLR2025_3D-MOM/"><strong><code>Project Page</code></strong></a>
+  <a href="https://iclr.cc/virtual/2025/poster/30162"><strong><code>ICLR Paper</code></strong></a>
+  <a href="https://github.com/InHwanJin/3DMOM"><strong><code>Source Code</code></strong></a>
 </p>
-
 <div align='center'>
-  <br><img src="3D-MOM_title.gif" width=70%>
+  <br><img src="assets/3D-MOM_title.gif" width=70%>
   <br>Generated Dynamic Scene Video from 3D-MOM.
 </div>
 
+## Setup
 
-## Release
+### Environment Setup
+Clone the source code of this repo.
+```shell
+git clone https://github.com/InHwanJin/3DMOM.git
+cd 3d-MOM
+git submodule update --init --recursive
+```
 
-- [ ] Code (around March 2025)
+Installation through pip is recommended. First, set up your Python environment:
+```shell
+conda create -n 3D-MOM python=3.7 
+conda activate Gaussians4D
+```
+Make sure to install CUDA and PyTorch versions that match your CUDA environment. We've tested on NVIDIA GeForce RTX 3090 with PyTorch  version 1.13.1.
+Please refer https://pytorch.org/ for further information.
+
+```shell
+pip install torch
+```
+
+The remaining packages can be installed with:
+
+```shell
+pip install -r requirements.txt
+pip install -e submodules/depth-diff-gaussian-rasterization
+pip install -e submodules/simple-knn
+```
+
+
+### Download Checkpoints
+We use the pre-trained **Flow Estimation Model** and **Video Generator Model**. You can download them at [3d-cinemagraphy](https://github.com/xingyi-li/3d-cinemagraphy?tab=readme-ov-file) for the Flow Estimation Model and [StyleCineGAN](https://github.com/jeolpyeoni/StyleCineGAN) for the Video Generator Model.
+
+After downloading, place the models in the `ckpts` folder inside the respective directories under `thirdparty`.
+
+## Preprocess Data
+Firstly, use [labelme](https://github.com/wkentaro/labelme) to specify the target regions (masks) and desired movement directions (hints): 
+```shell
+conda activate 3D-MOM
+cd demo/scene_0/
+labelme image.png
+```
+A screenshot here:
+![labelme](assets/labelme.png)
+
+It is recommended to specify **short** hints rather than long hints to avoid artifacts. Please follow [labelme](https://github.com/wkentaro/labelme) for detailed instructions if needed.
+
+After that, we can obtain an image.json file. Our next step is to convert the annotations stored in JSON format into datasets that can be used by our method:
+```shell
+labelme_json_to_dataset image.json  # this will generate a folder image_json
+cd ../../
+python scripts/generate_mask.py --inputdir demo/0/image_json
+```
+
+
+## Training
+
+
+
+## 📖 Citation
+<!-- If you find this code useful for your research, please consider to cite our paper:) -->
+
+```bibtex
+@inproceedings{jinoptimizing,
+  title={Optimizing 4D Gaussians for Dynamic Scene Video from Single Landscape Images},
+  author={Jin, In-Hwan and Choo, Haesoo and Jeong, Seong-Hun and Heemoon, Park and Kim, Junghwan and Kwon, Oh-joon and Kong, Kyeongbo},
+  booktitle={The Thirteenth International Conference on Learning Representations},
+  year={2025}
+}
+```
