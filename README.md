@@ -23,7 +23,7 @@
   <a href="https://github.com/InHwanJin/3DMOM"><strong><code>Source Code</code></strong></a>
 </p>
 <div align='center'>
-  <br><img src="3D-MOM_title.gif" width=70%>
+  <br><img src="assets/3D-MOM_title.gif" width=70%>
   <br>Generated Dynamic Scene Video from 3D-MOM.
 </div>
 
