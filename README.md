@@ -86,18 +86,20 @@ python scripts/generate_mask.py --inputdir demo/0/image_json
 ## Training
 For generate multi-view images and optimize 3d motion, run
 ```shell
-# First, generate multi-view motion and flow from 
+# First, generate multi-view image and flow from single image 
 python train_motion.py --input_dir demo/scene_0
 ```
 - `input_dir`: input folder that contains src images.
 
 For optimize 4D Gaussians and rendering dynamic scene video, run
 ```shell
-python train_4DGS.py --input_dir demo/scene_0
+# Second, reconstruct 4d scene from generated images and motions 
+python train_4DGS.py --input_dir demo/scene_0 --flow_scale 2
 
 python render_4DGS.py --input_dir demo/scene_0
 
 ```
+- `flow_scale`: flow scale difference to Gaussians.
 
 ## 📖 Citation
 <!-- If you find this code useful for your research, please consider to cite our paper:) -->
