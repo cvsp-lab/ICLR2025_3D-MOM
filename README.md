@@ -27,20 +27,21 @@
   <br>Generated Dynamic Scene Video from 3D-MOM.
 </div>
 
+
 ## Setup
 
 ### Environment Setup
 Clone the source code of this repo.
 ```shell
-git clone https://github.com/InHwanJin/3DMOM.git
-cd 3d-MOM
+git clone https://github.com/InHwanJin/3D-MOM.git
+cd 3D-MOM
 git submodule update --init --recursive
 ```
 
 Installation through pip is recommended. First, set up your Python environment:
 ```shell
 conda create -n 3D-MOM python=3.7 
-conda activate Gaussians4D
+conda activate 3D-MOM
 ```
 Make sure to install CUDA and PyTorch versions that match your CUDA environment. We've tested on NVIDIA GeForce RTX 3090 with PyTorch  version 1.13.1.
 Please refer https://pytorch.org/ for further information.
@@ -103,6 +104,12 @@ python render_4DGS.py --input_dir demo/scene_0
 - `flow_scale`: scale difference 3D motion(Point Cloud) and Gaussians.
 
 Results will be saved to the `input_dir/video`.
+
+
+## Acknowledgements
+
+This code is based on several existing projects: [LucidDreamer](https://github.com/luciddreamer-cvlab/LucidDreamer), [4DGaussians](https://github.com/hustvl/4DGaussians), [StyleCineGAN](https://github.com/jeolpyeoni/StyleCineGAN) and [3d-cinemagraphy](https://github.com/xingyi-li/3d-cinemagraphy). In particular, we used [LucidDreamer](https://github.com/hustvl/4DGaussians) as the foundational framework for our study. We extend our gratitude to the authors of these works for their contributions. 😊
+
 
 ## 📖 Citation
 If you find this code useful for your research, please consider to cite our paper:)
