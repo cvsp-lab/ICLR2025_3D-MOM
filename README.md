@@ -41,7 +41,7 @@ git submodule update --init --recursive
 Installation through pip is recommended. First, set up your Python environment:
 ```shell
 conda create -n 3D-MOM python=3.7 
-conda activate Gaussians4D
+conda activate 3D-MOM
 ```
 Make sure to install CUDA and PyTorch versions that match your CUDA environment. We've tested on NVIDIA GeForce RTX 3090 with PyTorch  version 1.13.1.
 Please refer https://pytorch.org/ for further information.
