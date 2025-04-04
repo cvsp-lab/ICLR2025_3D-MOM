@@ -34,7 +34,7 @@
 Clone the source code of this repo.
 ```shell
 git clone https://github.com/InHwanJin/3D-MOM.git
-cd 3d-MOM
+cd 3D-MOM
 git submodule update --init --recursive
 ```
 
