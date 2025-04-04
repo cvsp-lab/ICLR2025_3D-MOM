@@ -140,7 +140,6 @@ dmypy.json
 # Data
 # You might store dataset and model checkpoints during training which can be very large
 data/
-models/
 *.pth
 *.pt
 

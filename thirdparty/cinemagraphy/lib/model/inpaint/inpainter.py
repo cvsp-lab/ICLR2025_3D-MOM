@@ -14,8 +14,8 @@
 import torch
 from kornia.morphology import opening, erosion
 from kornia.filters import gaussian_blur2d
-from lib.model.inpaint.networks.inpainting_nets import Inpaint_Depth_Net, Inpaint_Color_Net
-from lib.utils.render_utils import masked_median_blur
+from thirdparty.cinemagraphy.lib.model.inpaint.networks.inpainting_nets import Inpaint_Depth_Net, Inpaint_Color_Net
+from thirdparty.cinemagraphy.lib.utils.render_utils import masked_median_blur
 
 
 def refine_near_depth_discontinuity(depth, alpha, kernel_size=11):

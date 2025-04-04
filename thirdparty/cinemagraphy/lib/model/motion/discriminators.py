@@ -11,7 +11,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 from torch.nn import init
 
-from lib.model.motion.layers.normalization import get_D_norm_layer
+from thirdparty.cinemagraphy.lib.model.motion.layers.normalization import get_D_norm_layer
 
 
 class BaseNetwork(nn.Module):

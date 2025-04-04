@@ -1,8 +1,8 @@
 import torch
 import torch.nn as nn
 
-from lib.model.motion.motion_loss import MotionLoss
-from lib.model.motion.architectures import SPADEUnet4MaskMotion
+from thirdparty.cinemagraphy.lib.model.motion.motion_loss import MotionLoss
+from thirdparty.cinemagraphy.lib.model.motion.architectures import SPADEUnet4MaskMotion
 
 
 class PSNR(nn.Module):

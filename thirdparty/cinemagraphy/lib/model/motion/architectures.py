@@ -2,17 +2,17 @@ import torch
 import torch.nn as nn
 import torchvision
 import numpy as np
-from lib.model.motion.layers.blocks import ResNet_Block
-from lib.model.motion.layers.blocks import ResNet_Block_Pconv
-from lib.model.motion.layers.blocks import ResNet_Block_Pconv2
-from lib.model.motion.networks import SPADE
+from thirdparty.cinemagraphy.lib.model.motion.layers.blocks import ResNet_Block
+from thirdparty.cinemagraphy.lib.model.motion.layers.blocks import ResNet_Block_Pconv
+from thirdparty.cinemagraphy.lib.model.motion.layers.blocks import ResNet_Block_Pconv2
+from thirdparty.cinemagraphy.lib.model.motion.networks import SPADE
 
-from lib.model.motion.layers.normalization import BatchNorm_StandingStats
-from lib.model.motion.configs import get_resnet_arch
+from thirdparty.cinemagraphy.lib.model.motion.layers.normalization import BatchNorm_StandingStats
+from thirdparty.cinemagraphy.lib.model.motion.configs import get_resnet_arch
 
-from lib.model.motion.layers.normalization import LinearNoiseLayer
-from lib.model.motion.layers.normalization import PartialLinearNoiseLayer
-from lib.model.motion.layers.partialconv2d import PartialConv2d
+from thirdparty.cinemagraphy.lib.model.motion.layers.normalization import LinearNoiseLayer
+from thirdparty.cinemagraphy.lib.model.motion.layers.normalization import PartialLinearNoiseLayer
+from thirdparty.cinemagraphy.lib.model.motion.layers.partialconv2d import PartialConv2d
 import torch.nn.functional as F
 
 

@@ -9,7 +9,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-import lib.model.motion.discriminators as discriminators
+import thirdparty.cinemagraphy.lib.model.motion.discriminators as discriminators
 
 
 # Defines the GAN loss which uses either LSGAN or the regular GAN.

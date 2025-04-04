@@ -2,11 +2,11 @@ import os
 import imageio
 import torch.utils.data.distributed
 # from pytorch3d.structures import Pointclouds
-from lib.utils.render_utils import *
-from cinemagraphy.lib.utils.general_utils import normalize_0_1
-from cinemagraphy.lib.model.inpaint.depth_layering import get_depth_bins
-from cinemagraphy.lib.model.inpaint.pcd import create_pcd_renderer
-from cinemagraphy.lib.model.motion.euler_integration import EulerIntegration
+from thirdparty.cinemagraphy.lib.utils.render_utils import *
+from thirdparty.cinemagraphy.lib.utils.general_utils import normalize_0_1
+from thirdparty.cinemagraphy.lib.model.inpaint.depth_layering import get_depth_bins
+from thirdparty.cinemagraphy.lib.model.inpaint.pcd import create_pcd_renderer
+from thirdparty.cinemagraphy.lib.model.motion.euler_integration import EulerIntegration
 from kornia.morphology import erosion
 
 

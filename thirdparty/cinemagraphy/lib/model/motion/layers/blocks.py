@@ -1,7 +1,7 @@
 import torch.nn as nn
-from lib.model.motion.layers.normalization import LinearNoiseLayer
-from lib.model.motion.layers.normalization import PartialLinearNoiseLayer
-from lib.model.motion.layers.partialconv2d import PartialConv2d
+from thirdparty.cinemagraphy.lib.model.motion.layers.normalization import LinearNoiseLayer
+from thirdparty.cinemagraphy.lib.model.motion.layers.normalization import PartialLinearNoiseLayer
+from thirdparty.cinemagraphy.lib.model.motion.layers.partialconv2d import PartialConv2d
 
 
 def spectral_conv_function(in_c, out_c, k, p, s, dilation=1, bias=True):

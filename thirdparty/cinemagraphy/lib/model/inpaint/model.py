@@ -1,9 +1,9 @@
 import os
 import torch
-from lib.model.inpaint.networks.resunet import ResUNet
-from lib.model.inpaint.networks.img_decoder import ImgDecoder
-from lib.utils.general_utils import de_parallel
-from lib.model.motion.motion_loss import DiscriminatorLoss
+from thirdparty.cinemagraphy.lib.model.inpaint.networks.resunet import ResUNet
+from thirdparty.cinemagraphy.lib.model.inpaint.networks.img_decoder import ImgDecoder
+from thirdparty.cinemagraphy.lib.utils.general_utils import de_parallel
+from thirdparty.cinemagraphy.lib.model.motion.motion_loss import DiscriminatorLoss
 
 
 class Namespace:
