@@ -154,9 +154,9 @@ class SpaceTimeAnimationModel(object):
             ckpts = [os.path.join(out_folder, f)
                      for f in sorted(os.listdir(out_folder)) if f.endswith('.pth')]
 
-        if self.args.cinema_ckpt_path is not None and not force_latest_ckpt:
-            if os.path.isfile(self.args.cinema_ckpt_path):  # load the specified ckpt
-                ckpts = [self.args.cinema_ckpt_path]
+        # if self.args.cinema_ckpt_path is not None and not force_latest_ckpt:
+        #     if os.path.isfile(self.args.cinema_ckpt_path):  # load the specified ckpt
+        ckpts = ['thirdparty/cinemgarphy/ckpts/model_150000.pth']
 
         if len(ckpts) > 0 and not self.args.no_reload:
             fpath = ckpts[-1]
