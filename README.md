@@ -104,6 +104,12 @@ python render_4DGS.py --input_dir demo/scene_0
 
 Results will be saved to the `input_dir/video`.
 
+
+## Acknowledgements
+
+This code is based on several existing projects: [LucidDreamer](https://github.com/luciddreamer-cvlab/LucidDreamer), [4DGaussians](https://github.com/hustvl/4DGaussians), [StyleCineGAN](https://github.com/jeolpyeoni/StyleCineGAN) and [3d-cinemagraphy](https://github.com/xingyi-li/3d-cinemagraphy). In particular, we used [LucidDreamer](https://github.com/hustvl/4DGaussians) as the foundational framework for our study. We extend our gratitude to the authors of these works for their contributions. 😊
+
+
 ## 📖 Citation
 If you find this code useful for your research, please consider to cite our paper:)
 
