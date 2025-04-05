@@ -452,7 +452,7 @@ if __name__ == "__main__":
     train_data = MOM.estimate_flow(train_data)  
     train_data, scene_flow = MOM.optimize_motion(src_img, src_mask, train_data, none_idx, args.train_iteration)
     torch.save(train_data, os.path.join(MOM_dir, 'tran_data.pth'))
-
+    
     frames = VideoGenerator(train_data)
     save_video(frames, MOM_dir, MOM.W, MOM.H)
     
@@ -462,6 +462,3 @@ if __name__ == "__main__":
         
     torch.save(train_data, os.path.join(MOM_dir, 'train_data.pth'))
     torch.save(scene_flow, os.path.join(MOM_dir, 'scene_flow.pth'))
-
-
-
