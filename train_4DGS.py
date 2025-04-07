@@ -424,7 +424,7 @@ if __name__ == "__main__":
     parser.add_argument('--detect_anomaly', action='store_true', default=False)
     parser.add_argument("--test_iterations", nargs="+", type=int, default=[3000,7000,14000])
     parser.add_argument("--video_iterations", nargs="+", type=int, default=[14000, 20000, 25000, 30_000])
-    parser.add_argument("--save_iterations", nargs="+", type=int, default=[10, 14000, 20000, 25000, 30_000, 35000, 40000, 50000])
+    parser.add_argument("--save_iterations", nargs="+", type=int, default=[14000, 20000, 25000, 30_000, 35000, 40000, 50000])
     parser.add_argument("--quiet", action="store_true")
     parser.add_argument("--checkpoint_iterations", nargs="+", type=int, default=[])
     parser.add_argument("--start_checkpoint", type=str, default = None)
