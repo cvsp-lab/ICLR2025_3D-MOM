@@ -85,7 +85,7 @@ python scripts/generate_mask.py --inputdir demo/0/image_json
 ```
 
 
-## Training
+## 💫Training
 For generate multi-view images and optimize 3D motion, run
 ```shell
 # First, generate multi-view image and flow from single image.
