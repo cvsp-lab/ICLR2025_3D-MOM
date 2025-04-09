@@ -20,6 +20,7 @@
 <p align="center">
   <a href="https://cvsp-lab.github.io/ICLR2025_3D-MOM/"><strong><code>Project Page</code></strong></a>
   <a href="https://iclr.cc/virtual/2025/poster/30162"><strong><code>ICLR Paper</code></strong></a>
+  <a href="http://arxiv.org/abs/2504.05458"><strong><code>Arxiv Paper</code></strong></a>
   <a href="https://github.com/InHwanJin/3DMOM"><strong><code>Source Code</code></strong></a>
 </p>
 <div align='center'>
