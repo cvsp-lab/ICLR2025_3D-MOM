@@ -22,7 +22,7 @@
   <a href="https://iclr.cc/virtual/2025/poster/30162"><strong><code>ICLR Paper</code></strong></a>
   <a href="http://arxiv.org/abs/2504.05458"><strong><code>Arxiv Paper</code></strong></a>
   <a href="https://github.com/InHwanJin/3DMOM"><strong><code>Source Code</code></strong></a>
-  <a href="https://iclr.cc/virtual/2025/poster/30162"><strong><code>Source Poster</code></strong></a>
+  <a href="https://iclr.cc/virtual/2025/poster/30162"><strong><code>Poster</code></strong></a>
 </p>
 <div align='center'>
   <br><img src="assets/3D-MOM_title.gif" width=70%>
