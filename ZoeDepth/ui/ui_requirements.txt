@@ -1,2 +1,0 @@
-gradio
-trimesh==3.9.42

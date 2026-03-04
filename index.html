@@ -1,0 +1,1493 @@
+<!DOCTYPE html>
+<head>
+    <!-- Pretendard 폰트 추가 -->
+    <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
+    
+    <meta charset="utf-8" />
+    <title>ICLR_3D-MOM</title>
+    <link rel="stylesheet" href="bootstrap-4.4.1.css">
+    <link rel="stylesheet" href="bulma.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <style type="text/css">svg:not(:root).svg-inline--fa{overflow:visible}.svg-inline--fa{display:inline-block;font-size:inherit;height:1em;overflow:visible;vertical-align:-.125em}.svg-inline--fa.fa-lg{vertical-align:-.225em}.svg-inline--fa.fa-w-1{width:.0625em}.svg-inline--fa.fa-w-2{width:.125em}.svg-inline--fa.fa-w-3{width:.1875em}.svg-inline--fa.fa-w-4{width:.25em}.svg-inline--fa.fa-w-5{width:.3125em}.svg-inline--fa.fa-w-6{width:.375em}.svg-inline--fa.fa-w-7{width:.4375em}.svg-inline--fa.fa-w-8{width:.5em}.svg-inline--fa.fa-w-9{width:.5625em}.svg-inline--fa.fa-w-10{width:.625em}.svg-inline--fa.fa-w-11{width:.6875em}.svg-inline--fa.fa-w-12{width:.75em}.svg-inline--fa.fa-w-13{width:.8125em}.svg-inline--fa.fa-w-14{width:.875em}.svg-inline--fa.fa-w-15{width:.9375em}.svg-inline--fa.fa-w-16{width:1em}.svg-inline--fa.fa-w-17{width:1.0625em}.svg-inline--fa.fa-w-18{width:1.125em}.svg-inline--fa.fa-w-19{width:1.1875em}.svg-inline--fa.fa-w-20{width:1.25em}.svg-inline--fa.fa-pull-left{margin-right:.3em;width:auto}.svg-inline--fa.fa-pull-right{margin-left:.3em;width:auto}.svg-inline--fa.fa-border{height:1.5em}.svg-inline--fa.fa-li{width:2em}.svg-inline--fa.fa-fw{width:1.25em}.fa-layers svg.svg-inline--fa{bottom:0;left:0;margin:auto;position:absolute;right:0;top:0}.fa-layers{display:inline-block;height:1em;position:relative;text-align:center;vertical-align:-.125em;width:1em}.fa-layers svg.svg-inline--fa{-webkit-transform-origin:center center;transform-origin:center center}.fa-layers-counter,.fa-layers-text{display:inline-block;position:absolute;text-align:center}.fa-layers-text{left:50%;top:50%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);-webkit-transform-origin:center center;transform-origin:center center}.fa-layers-counter{background-color:#ff253a;border-radius:1em;-webkit-box-sizing:border-box;box-sizing:border-box;color:#fff;height:1.5em;line-height:1;max-width:5em;min-width:1.5em;overflow:hidden;padding:.25em;right:0;text-overflow:ellipsis;top:0;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:top right;transform-origin:top right}.fa-layers-bottom-right{bottom:0;right:0;top:auto;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:bottom right;transform-origin:bottom right}.fa-layers-bottom-left{bottom:0;left:0;right:auto;top:auto;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:bottom left;transform-origin:bottom left}.fa-layers-top-right{right:0;top:0;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:top right;transform-origin:top right}.fa-layers-top-left{left:0;right:auto;top:0;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:top left;transform-origin:top left}.fa-lg{font-size:1.3333333333em;line-height:.75em;vertical-align:-.0667em}.fa-xs{font-size:.75em}.fa-sm{font-size:.875em}.fa-1x{font-size:1em}.fa-2x{font-size:2em}.fa-3x{font-size:3em}.fa-4x{font-size:4em}.fa-5x{font-size:5em}.fa-6x{font-size:6em}.fa-7x{font-size:7em}.fa-8x{font-size:8em}.fa-9x{font-size:9em}.fa-10x{font-size:10em}.fa-fw{text-align:center;width:1.25em}.fa-ul{list-style-type:none;margin-left:2.5em;padding-left:0}.fa-ul>li{position:relative}.fa-li{left:-2em;position:absolute;text-align:center;width:2em;line-height:inherit}.fa-border{border:solid .08em #eee;border-radius:.1em;padding:.2em .25em .15em}.fa-pull-left{float:left}.fa-pull-right{float:right}.fa.fa-pull-left,.fab.fa-pull-left,.fal.fa-pull-left,.far.fa-pull-left,.fas.fa-pull-left{margin-right:.3em}.fa.fa-pull-right,.fab.fa-pull-right,.fal.fa-pull-right,.far.fa-pull-right,.fas.fa-pull-right{margin-left:.3em}.fa-spin{-webkit-animation:fa-spin 2s infinite linear;animation:fa-spin 2s infinite linear}.fa-pulse{-webkit-animation:fa-spin 1s infinite steps(8);animation:fa-spin 1s infinite steps(8)}@-webkit-keyframes fa-spin{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes fa-spin{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}.fa-rotate-90{-webkit-transform:rotate(90deg);transform:rotate(90deg)}.fa-rotate-180{-webkit-transform:rotate(180deg);transform:rotate(180deg)}.fa-rotate-270{-webkit-transform:rotate(270deg);transform:rotate(270deg)}.fa-flip-horizontal{-webkit-transform:scale(-1,1);transform:scale(-1,1)}.fa-flip-vertical{-webkit-transform:scale(1,-1);transform:scale(1,-1)}.fa-flip-both,.fa-flip-horizontal.fa-flip-vertical{-webkit-transform:scale(-1,-1);transform:scale(-1,-1)}:root .fa-flip-both,:root .fa-flip-horizontal,:root .fa-flip-vertical,:root .fa-rotate-180,:root .fa-rotate-270,:root .fa-rotate-90{-webkit-filter:none;filter:none}.fa-stack{display:inline-block;height:2em;position:relative;width:2.5em}.fa-stack-1x,.fa-stack-2x{bottom:0;left:0;margin:auto;position:absolute;right:0;top:0}.svg-inline--fa.fa-stack-1x{height:1em;width:1.25em}.svg-inline--fa.fa-stack-2x{height:2em;width:2.5em}.fa-inverse{color:#fff}.sr-only{border:0;clip:rect(0,0,0,0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px}.sr-only-focusable:active,.sr-only-focusable:focus{clip:auto;height:auto;margin:0;overflow:visible;position:static;width:auto}.svg-inline--fa .fa-primary{fill:var(--fa-primary-color,currentColor);opacity:1;opacity:var(--fa-primary-opacity,1)}.svg-inline--fa .fa-secondary{fill:var(--fa-secondary-color,currentColor);opacity:.4;opacity:var(--fa-secondary-opacity,.4)}.svg-inline--fa.fa-swap-opacity .fa-primary{opacity:.4;opacity:var(--fa-secondary-opacity,.4)}.svg-inline--fa.fa-swap-opacity .fa-secondary{opacity:1;opacity:var(--fa-primary-opacity,1)}.svg-inline--fa mask .fa-primary,.svg-inline--fa mask .fa-secondary{fill:#000}.fad.fa-inverse{color:#fff}</style>
+
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Pretendard', sans-serif; /* Pretendard 폰트 적용 */
+        }
+
+        ul li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+        
+
+        #menu {
+            font: bold 16px "malgun gothic";
+            width: 450px;
+            height: 50px;
+            background: #e0dddd;
+            color: black;
+            line-height: 50px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        #menu>ul>li {
+            float: left;
+            width: 140px;
+            position: relative;
+        }
+
+        #menu>ul>li>ul {
+            width: 130px;
+            display: none;
+            position: absolute;
+            font-size: 14px;
+            background: rgb(229, 243, 248);
+        }
+
+        #menu>ul>li:hover>ul {
+            display: block;
+        }
+
+        .slideshow-container {
+            position: relative;
+            max-width: 1000px;
+            margin: auto;
+            border-radius: 15px;
+            padding: 10px;
+        }
+        
+        .ai {
+            font-family: 'Academicons';
+            font-weight: 400;
+            -moz-osx-font-smoothing: grayscale;
+            -webkit-font-smoothing: antialiased;
+            display: inline-block;
+            font-style: normal;
+            font-variant: normal;
+            text-rendering: auto;
+            line-height: 1;
+        }
+        .ai-arxiv:before {
+            content: "\e974";
+        }
+        .video-slide {
+            display: none;
+            align-items: center;
+        }
+        
+        .video-slide.active {
+            display: block;
+        }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            margin-top: -22px;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+        
+        .is-dark {
+            color: white; /* 흰색으로 변경 */
+            text-decoration: none; /* 필요하다면 밑줄 제거 */
+        }
+
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .prev {
+            left: 0;
+            border-radius: 3px 3px 3px 0;
+        }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        /* Flexbox 추가 */
+        .flex-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .flex-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .media-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .top-banner-image {
+            width: 100%;
+            height: auto;
+        }
+        .ai-arxiv{
+            content: "\e974";
+        }
+        *, ::after, ::before {
+            box-sizing: border-box;
+        }
+        .custom-link {
+            color: hsl(204, 86%, 53%); /* 밝은 청색 */
+            text-decoration: none; /* 밑줄 제거 */
+        }
+
+        .content-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .media-element {
+            width: 50%;
+            height: auto;
+        }
+        .custom-size {
+            width: 49%; /* 원하는 크기로 조절 */
+            height: auto; /* 이미지의 비율을 유지 */
+        }   
+        
+        .wide-video {
+            width: 1000px; /* 가로 길이 1000px */
+            height: auto; /* 비율 유지 */
+            display: block;
+            margin: 20px auto; /* 센터 정렬을 위해 추가 */
+        }
+
+        /* 첨자 크기 줄이기 */
+        sup {
+            font-size: 0.7em;
+	    font: "Times New Roman"
+        }
+
+	.button-container {
+	    text-align: center;
+	    margin-top: 15px;
+	}
+	
+	.icon-button {
+	    display: inline-flex;
+	    align-items: center;
+	    justify-content: center;
+	    background-color: #f5f5f5;
+	    color: black;
+	    text-decoration: none;
+	    font-size: 16px;
+	    font-family: 'Pretendard', sans-serif;
+	    padding: 10px 20px;
+	    margin: 5px;
+	    border-radius: 15px;
+	    border: 1px solid #ccc;
+	    transition: background-color 0.3s, transform 0.2s;
+	    text-align: center;
+	}
+	
+	.icon-button .icon {
+	    margin-right: 8px;
+	    font-size: 1em;
+	}
+	
+	.icon-button:hover {
+	    background-color: #ddd;
+	    transform: scale(1.05);  
+	}
+    .ai-arxiv:before {
+    content: "\e974";
+    }
+    .ai {
+    font-family: 'Academicons';
+    font-weight: 400;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
+    }
+    .publication-title {
+    font-family: 'Google Sans', sans-serif;
+    }
+    .title.is-1 {
+    font-size: 3rem;
+    }
+
+    </style>
+    <script>
+        MathJax = {
+          tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']]
+          },
+          svg: {
+            fontCache: 'global'
+          }
+        };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+</head>
+
+
+
+
+<body>
+	
+<!-- <div style="position: fixed; top: 10px; left: 50%; transform: translateX(-50%); background-color: white; padding: 10px; text-align: center; white-space: nowrap; z-index: 9999; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+  <a href="#section1" style="display: inline-block; margin: 0 8px; padding: 5px 8px; border: 1px solid black; border-radius: 5px; text-decoration: none; background-color: white; font-size: 12px;">Dynamic Scene Video</a>
+  <a href="#section2" style="display: inline-block; margin: 0 8px; padding: 5px 8px; border: 1px solid black; border-radius: 5px; text-decoration: none; background-color: white; font-size: 12px;">Overall Framework</a>
+  <a href="#section3" style="display: inline-block; margin: 0 8px; padding: 5px 8px; border: 1px solid black; border-radius: 5px; text-decoration: none; background-color: white; font-size: 12px;">3D Motion Optimization Module</a>
+  <a href="#section4" style="display: inline-block; margin: 0 8px; padding: 5px 8px; border: 1px solid black; border-radius: 5px; text-decoration: none; background-color: white; font-size: 12px;">Experiments Results</a>
+  <a href="#section5" style="display: inline-block; margin: 0 8px; padding: 5px 8px; border: 1px solid black; border-radius: 5px; text-decoration: none; background-color: white; font-size: 12px;">Application: 4D Scene Generation</a>
+  <a href="#section6" style="display: inline-block; margin: 0 8px; padding: 5px 8px; border: 1px solid black; border-radius: 5px; text-decoration: none; background-color: white; font-size: 12px;">3D Motion Optimization</a>
+  <a href="#section7" style="display: inline-block; margin: 0 8px; padding: 5px 8px; border: 1px solid black; border-radius: 5px; text-decoration: none; background-color: white; font-size: 12px;">Single Image Animation</a>
+  <a href="#section8" style="display: inline-block; margin: 0 8px; padding: 5px 8px; border: 1px solid black; border-radius: 5px; text-decoration: none; background-color: white; font-size: 12px;">3D Motion Initialization</a>
+  <a href="#section9" style="display: inline-block; margin: 0 8px; padding: 5px 8px; border: 1px solid black; border-radius: 5px; text-decoration: none; background-color: white; font-size: 12px;">4D Gaussian Splatting</a>
+  <a href="#section10" style="display: inline-block; margin: 0 8px; padding: 5px 8px; border: 1px solid black; border-radius: 5px; text-decoration: none; background-color: white; font-size: 12px;">Effect of Two-stage Training</a>
+  <a href="#section11" style="display: inline-block; margin: 0 8px; padding: 5px 8px; border: 1px solid black; border-radius: 5px; text-decoration: none; background-color: white; font-size: 12px;">Long Video Results</a>
+  <a href="#section12" style="display: inline-block; margin: 0 8px; padding: 5px 8px; border: 1px solid black; border-radius: 5px; text-decoration: none; background-color: white; font-size: 12px;">Multi-view Rendered RGB Images</a>
+</div>
+ -->
+
+
+
+
+
+
+
+
+
+    <br/>
+    <br/>
+	<br/>
+	<br/>
+	<br/>
+<!-- <div style="border: 2px solid rgb(209, 206, 206); border-radius: 15px; padding: 10px;width:1100px; margin:auto;box-shadow: 1px 1px 2px 6px rgb(209, 206, 206)">
+        <br/>
+     -->
+    <br/>
+    <p style="font-size:2.8em; text-align:center; font-family: 'Times New Roman'; margin-bottom: 0;">
+        <strong style="font-family: 'Noto Sans', sans-serif; letter-spacing: -1px">
+            Optimizing 4D Gaussians for Dynamic Scene Video <br/> from Single Landscape Images
+        </strong>
+    </p>
+
+    <p style="font-size:1.5em; text-align:center; margin-top: 15px;">
+        <strong style="font-family: 'Noto Sans', sans-serif; letter-spacing: -1px">
+            International Conference on Learning Representations (ICLR), 2025
+        </strong>
+    </p>
+
+
+    <!-- <h2 class="title is-4" style="text-align:center; margin-top: 3;">ICLR 2025</h2>
+	</strong>
+    </p>
+    <br/> -->
+
+
+    <p style="font-size:1.25em; text-align:center; font-family: 'Noto Sans', sans-serif; margin-top: 5px;">
+        <a href="https://www.pnu-cvsp.com/members/inhwan" class="custom-link">In-Hwan Jin</a>
+        <sup style="margin-left: -5px; margin-right: 5px;">1*</sup>
+        <a href="https://www.pnu-cvsp.com/members/haesoo" class="custom-link">Haesoo Choo</a>
+        <sup style="margin-left: -5px; margin-right: 5px;">2*</sup>
+        <a href="https://www.pnu-cvsp.com/1bfabcc9-0e34-8019-ba8a-fb7bdbc986af" class="custom-link">Seong-Hun Jeong</a>
+        <sup style="margin-left: -5px; margin-right: 5px;">1</sup><br>
+        <a href="https://busanmbc.co.kr/" class="custom-link">Heemoon Park</a>
+        <sup style="margin-left: -5px; margin-right: 5px;">3</sup>
+        <a href="https://www.junghwankim.com/" class="custom-link">Junghwan Kim</a>
+        <sup style="margin-left: -5px; margin-right: 5px;">4</sup>
+        <a href="https://visual.center/" class="custom-link">Oh-joon Kwon</a>
+        <sup style="margin-left: -5px; margin-right: 5px;">5</sup>
+        <a href="https://www.pnu-cvsp.com/prof" class="custom-link">Kyeongbo Kong</a>
+        <sup style="margin-left: -5px;">1†</sup>
+     </p>
+
+    <br/>
+    </h2>
+	<p style="font-size:1.1em; text-align:center; font-family: 'Noto Sans', sans-serif; margin-top: -15px;">
+	    <sup style="margin-right: -3px;">1</sup> Pusan National University 
+        <sup style="margin-left: 5px; margin-right: -3px;">2</sup> Pukyong National University<br>
+		<sup style="margin-left: 5px; margin-right: -3px;">3</sup> Busan MBC 
+        <sup style="margin-left: 5px; margin-right: -3px;">4</sup> Korea University 
+        <sup style="margin-left: 5px; margin-right: -3px;">5</sup> DM Studio
+	</p>
+	    <br/>
+	<p style="color:gray; font-size:0.8em; text-align:center; font-family: 'Noto Sans', sans-serif; margin-top: -15px;">
+	    <sup>*</sup> Equal contribution &nbsp;&nbsp;&nbsp; <sup>†</sup> Corresponding author
+	</p>
+	
+	<div class="column has-text-centered button-container">
+        <div class="publication-links">
+            <!-- PDF Link. -->
+            <span class="link-block">
+              <a href="https://iclr.cc/virtual/2025/poster/30162" class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                    <svg class="svg-inline--fa fa-file-pdf fa-w-12" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="file-pdf" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" data-fa-i2svg=""><path fill="currentColor" d="M181.9 256.1c-5-16-4.9-46.9-2-46.9 8.4 0 7.6 36.9 2 46.9zm-1.7 47.2c-7.7 20.2-17.3 43.3-28.4 62.7 18.3-7 39-17.2 62.9-21.9-12.7-9.6-24.9-23.4-34.5-40.8zM86.1 428.1c0 .8 13.2-5.4 34.9-40.2-6.7 6.3-29.1 24.5-34.9 40.2zM248 160h136v328c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V24C0 10.7 10.7 0 24 0h200v136c0 13.2 10.8 24 24 24zm-8 171.8c-20-12.2-33.3-29-42.7-53.8 4.5-18.5 11.6-46.6 6.2-64.2-4.7-29.4-42.4-26.5-47.8-6.8-5 18.3-.4 44.1 8.1 77-11.6 27.6-28.7 64.6-40.8 85.8-.1 0-.1.1-.2.1-27.1 13.9-73.6 44.5-54.5 68 5.6 6.9 16 10 21.5 10 17.9 0 35.7-18 61.1-61.8 25.8-8.5 54.1-19.1 79-23.2 21.7 11.8 47.1 19.5 64 19.5 29.2 0 31.2-32 19.7-43.4-13.9-13.6-54.3-9.7-73.6-7.2zM377 105L279 7c-4.5-4.5-10.6-7-17-7h-6v128h128v-6.1c0-6.3-2.5-12.4-7-16.9zm-74.1 255.3c4.1-2.7-2.5-11.9-42.8-9 37.1 15.8 42.8 9 42.8 9z"></path></svg><!-- <i class="fas fa-file-pdf"></i> Font Awesome fontawesome.com -->
+                </span>
+                <span>Paper</span>
+              </a>
+            </span>
+            <!-- arXiv Link. -->
+            <a href="http://arxiv.org/abs/2504.05458" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                <i class="ai ai-arxiv"></i>                </i>
+                </span>
+                <span>arXiv</span>
+            </a>
+            <!-- Code Link. -->
+            <span class="link-block">
+              <a href="https://github.com/cvsp-lab/ICLR2025_3D-MOM" class="external-link button is-normal is-rounded is-dark disabled">
+                <span class="icon">
+                    <svg class="svg-inline--fa fa-github fa-w-16" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" data-fa-i2svg=""><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg><!-- <i class="fab fa-github"></i> Font Awesome fontawesome.com -->
+                </span>
+                <span>Code</span>
+                </a>
+            </span>
+          </div>
+	</div>
+
+
+    <br/>
+    <div style="border: 2px solid white; border-radius: 15px; padding: 10px;width:1100px; margin:auto"></div>
+    <br />
+    <div class="slideshow-container" id="slideshow1">
+    <div class="video-slide">
+        <div class="media-container">
+	    <img src="static/videos/title.png" alt="Top Banner Image" class="top-banner-image">
+		<div class="content-row">
+		<img src="static/project_page/additional/scene0/image.png" alt="Sample Image" class="media-element custom-size">
+                <video class="media-element" controls autoplay loop muted>
+                    <source src="static/project_page/additional/scene0/side.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+		</div>
+        </div>
+    </div>
+    <div class="video-slide">
+        <div class="media-container">
+	    <img src="static/videos/title.png" alt="Top Banner Image" class="top-banner-image">
+		<div class="content-row">
+		<img src="static/project_page/additional/scene3/image.png" alt="Sample Image" class="media-element custom-size">
+                <video class="media-element" controls autoplay loop muted>
+                    <source src="static/project_page/additional/scene3/zoom.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+		</div>
+        </div>
+    </div>
+    <div class="video-slide">
+        <div class="media-container">
+	    <img src="static/videos/title.png" alt="Top Banner Image" class="top-banner-image">
+		<div class="content-row">
+		<img src="static/project_page/additional/scene4/image.png" alt="Sample Image" class="media-element custom-size">
+                <video class="media-element" controls autoplay loop muted>
+                    <source src="static/project_page/additional/scene4/up_down.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+		</div>
+        </div>
+    </div>
+    <div class="video-slide">
+        <div class="media-container">
+	    <img src="static/videos/title.png" alt="Top Banner Image" class="top-banner-image">
+		<div class="content-row">
+		<img src="static/project_page/resized_image.png" alt="Sample Image" class="media-element custom-size">
+                <video class="media-element" controls autoplay loop muted width="960" height="640">
+                    <source src="static/project_page/last/resize-video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+		</div>
+        </div>
+    </div>
+	<div class="video-slide">
+        <div class="media-container">
+	    <img src="static/videos/title.png" alt="Top Banner Image" class="top-banner-image">
+		<div class="content-row">
+		<img src="static/videos/0.png" alt="Sample Image" class="media-element custom-size">
+                <video class="media-element" controls autoplay loop muted>
+                    <source src="static/videos/main/zoom.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+		</div>
+        </div>
+    </div>
+    <div class="video-slide">
+        <div class="media-container">
+	    <img src="static/videos/title.png" alt="Top Banner Image" class="top-banner-image">
+		<div class="content-row">
+		<img src="static/videos/43.jpg" alt="Sample Image" class="media-element custom-size">
+                <video class="media-element" controls autoplay loop muted>
+                    <source src="static/videos/5.additional_results/zoom43.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+		</div>
+        </div>
+    </div>
+    <div class="video-slide">
+        <div class="media-container">
+            <img src="static/videos/title.png" alt="Top Banner Image" class="top-banner-image">
+		<div class="content-row">
+		<img src="static/videos/44.jpg" alt="Sample Image" class="media-element custom-size">
+                <video class="media-element" controls autoplay loop muted>
+                    <source src="static/videos/5.additional_results/side44.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+    </div>
+    <div class="video-slide">
+        <div class="media-container">
+            <img src="static/videos/title.png" alt="Top Banner Image" class="top-banner-image">
+		<div class="content-row">
+		<img src="static/videos/41.jpg" alt="Sample Image" class="media-element custom-size">
+                <video class="media-element" controls autoplay loop muted>
+                    <source src="static/videos/5.additional_results/side41.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+    </div>
+    <div class="video-slide">
+        <div class="media-container">
+            <img src="static/videos/title.png" alt="Top Banner Image" class="top-banner-image">
+		<div class="content-row">
+		<img src="static/videos/34.jpg" alt="Sample Image" class="media-element custom-size">
+                <video class="media-element" controls autoplay loop muted>
+                    <source src="static/videos/5.additional_results/up34.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+    </div>
+    <div class="video-slide">
+        <div class="media-container">
+            <img src="static/videos/title.png" alt="Top Banner Image" class="top-banner-image">
+		<div class="content-row">
+		<img src="static/videos/38.jpg" alt="Sample Image" class="media-element custom-size">
+                <video class="media-element" controls autoplay loop muted>
+                    <source src="static/videos/5.additional_results/up38.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+    </div>
+    <div class="video-slide">
+        <div class="media-container">
+            <img src="static/videos/title.png" alt="Top Banner Image" class="top-banner-image">
+		<div class="content-row">
+		<img src="static/videos/45.jpg" alt="Sample Image" class="media-element custom-size">
+                <video class="media-element" controls autoplay loop muted>
+                    <source src="static/videos/5.additional_results/up45.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+    </div>
+    <div class="video-slide">
+        <div class="media-container">
+            <img src="static/videos/title.png" alt="Top Banner Image" class="top-banner-image">
+		<div class="content-row">
+		<img src="static/videos/35.jpg" alt="Sample Image" class="media-element custom-size">
+                <video class="media-element" controls autoplay loop muted>
+                    <source src="static/videos/5.additional_results/zoom35.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+    </div>
+    <div class="video-slide">
+        <div class="media-container">
+            <img src="static/videos/title.png" alt="Top Banner Image" class="top-banner-image">
+		<div class="content-row">
+		<img src="static/videos/40.jpg" alt="Sample Image" class="media-element custom-size">
+                <video class="media-element" controls autoplay loop muted>
+                    <source src="static/videos/5.additional_results/zoom40.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+    </div>
+    <div class="video-slide">
+        <div class="media-container">
+            <img src="static/videos/title.png" alt="Top Banner Image" class="top-banner-image">
+		<div class="content-row">
+		<img src="static/videos/39.jpg" alt="Sample Image" class="media-element custom-size">
+                <video class="media-element" controls autoplay loop muted>
+                    <source src="static/videos/5.additional_results/side39.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+    </div>
+	    
+    <!-- Add more video slides as needed -->
+
+        <a class="prev" onclick="plusSlides(-1, 'slideshow1')">&#10094;</a>
+        <a class="next" onclick="plusSlides(1, 'slideshow1')">&#10095;</a>
+    </div>
+	
+    <br/>
+    <br/>
+        <h2><p style="color:black; font-size:2em;text-align:center; font-family: 'Noto Sans', sans-serif; letter-spacing: -1.2px; font-weight: bold; margin-top: 15px; margin-bottom: 0;"></span> Overview Video</p></h2>
+
+    <br/>
+	<div style="text-align:center;">
+	<iframe width="800" height="600" src="https://www.youtube.com/embed/ZaSHPHY4lE0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+	</div>
+	
+	
+
+    <!-- <br/>
+    </div>
+    </div>
+    <br/><h2 id="section1"> </h2>
+	<br/>
+	<br/>
+    <!-- <div style="border: 2px solid rgb(209, 206, 206); border-radius: 15px; padding: 10px;width:1100px; margin:auto;box-shadow: 1px 1px 2px 6px rgb(209, 206, 206)"> -->
+        <!-- <br/> -->
+    <br/>
+    <br/>
+    <h2><p style="color:black; font-size:2em;text-align:center; font-family: 'Noto Sans', sans-serif; letter-spacing: -1.2px; font-weight: bold; margin-top: 30px; margin-bottom: 10px;"></span> Dynamic Scene Video</p></h2>
+    <div style="border: 2px solid white; border-radius: 15px; width:800px; margin:auto;height: 200;">
+    <h3><p style="color:#4a4a4a;font-size:1.0em; font-family: 'Noto Sans', sans-serif; font-weight: normal; text-align: justify;">
+        Recently, a field known as dynamic scene video has emerged, which creates videos with natural animations from specific camera perspectives using a combination of single image animation and 3D photography. 
+	    These methods utilize Layered Depth Images (LDIs), which are created by dividing a single image into multiple layers based on depth, to represent a pseudo 3D space. 
+	    However, there are limitations when attempting to discretely separate most elements, including fluids, in a continuous landscape, and 3D space cannot be fully represented this way.
+	    Therefore, achieving complete 4D space virtualization through explicit representation is necessary, and we propose this approach for the first time.</p></h3>
+        <br/><p id="Abstract">
+    </div>
+
+
+    <h2><p style="color:black; font-size:2em;text-align:center; font-family: 'Noto Sans', sans-serif; letter-spacing: -1.2px; font-weight: bold; margin-top: 30px; margin-bottom: 10px;"></span> Abstract</p></h2>
+    <!-- <h2><p style="font-size:1.3em;text-align:center; font-family: 'Times New Roman';font-weight: normal;">Abstract</p></h2> -->
+    <div style="border: 2px solid white; border-radius: 15px; width:800px; margin:auto;height: 200;">
+    <h3><p style="color:#4a4a4a;font-size:1.0em; font-family: 'Noto Sans', sans-serif; font-weight: normal; text-align: justify;">
+        To achieve realistic immersion in landscape images, 
+	    fluids such as water and clouds need to move within the image while revealing new scenes from various camera perspectives. 
+	    Recently, a field called dynamic scene video has emerged, which combines single image animation with 3D photography. 
+	    These methods use pseudo 3D space, implicitly represented with Layered Depth Images (LDIs). 
+	    LDIs separate a single image into depth-based layers, which enables elements like water and clouds to move within the image while revealing new scenes from different camera perspectives.
+	    However, as landscapes typically consist of continuous elements, including fluids, the representation of a 3D space  separates a landscape image into discrete layers, 
+	    and it can lead to diminished depth perception and potential distortions depending on camera movement.
+	    Furthermore, due to its implicit modeling of 3D space, the output may be limited to videos in the 2D domain, potentially reducing their versatility.
+	    In this paper, we propose representing a complete 3D space for dynamic scene video by modeling explicit representations, specifically 4D Gaussians, from a single image. 
+	    The framework is focused on optimizing 3D Gaussians by generating multi-view images from a single image and creating 3D motion to optimize 4D Gaussians. 
+	    The most important part of proposed framework is consistent 3D motion estimation, which estimates common motion among multi-view images to bring the motion in 3D space closer to actual motions. 
+	    As far as we know, this is the first attempt that considers animation while representing a complete 3D space from a single landscape image.
+	    Our model demonstrates the ability to provide realistic immersion in various landscape images through diverse experiments and metrics.</p></h3>
+        <br/><p id="method">
+    </div>
+    </div>
+    <br/><h2 id="section2"> </h2>
+
+    <!-- <div style="border: 2px solid rgb(209, 206, 206); border-radius: 15px; padding: 10px;width:1100px; margin:auto;box-shadow: 1px 1px 2px 6px rgb(209, 206, 206)"> -->
+    <!-- <div style="border: 2px solid white; border-radius: 15px; width:1000px; margin:auto;height: 200;"> -->
+<!-- <h2><p style="font-size:1.3em;text-align:center; font-family: 'Times New Roman';font-weight: normal;">Overall Framework</p></h2> -->
+	<!-- <h2><p style="font-size:1.3em;text-align:center; font-family: 'Times New Roman';font-weight: normal;"></span> Overall Framework</p></h2> -->
+    <h2><p style="color:black; font-size:2em;text-align:center; font-family: 'Noto Sans', sans-serif; letter-spacing: -1.2px; font-weight: bold; margin-top: 30px; margin-bottom: 10px;"></span> Method overview</p></h2>
+    <!-- <h3><p style="color:black;font-size:1.0em; font-family: 'Times New Roman';font-weight: normal;text-align: justify;"> -->
+    <div style="border: 2px solid white; border-radius: 15px; width:1000px; margin:auto;height: 200;">
+    <h3><p style="color:#4a4a4a;font-size:1.0em; font-family: 'Noto Sans', sans-serif; font-weight: normal; text-align: justify;">
+        Our goal is to optimize 4D Gaussians to represent a complete 3D space, including animation, from a single image.
+	    (a) A depth map is estimated from the given single image, and it is converted into a point cloud. 
+	    For optimizing the 3D Gaussians, multi-view RGB images are rendered according to the defined camera trajectory. 
+	    (b) Similarly, multi-view motion masks are rendered for the input motion mask. 
+	    These are utilized to estimate multi-view 2D motion maps along with the rendered RGB images. 
+	    3D motion is obtained by unprojecting the estimated 2D motion into the 3D domain. 
+	    In this context, the proposed <strong>3D Motion Optimization Module (3D-MOM)</strong> ensures consistent 3D motion across multi-views. 
+	    (c) Using the optimized 3D Gaussians and generated 3D motion, 4D Gaussians are optimized for changes in position, rotation, and scaling over time.</p></h3>
+        <br/>
+
+        <!--         <img src="static/images/NeurIPS_fig_1.png" alt="My Image" width="1000"> -->
+	<div style="text-align:center;">
+	<iframe width="800" height="600" src="https://www.youtube.com/embed/XZQa3ntgplI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+	</div>
+        
+        <h3><p style="color:black;font-size:0.9em; font-family: 'Times New Roman';font-weight: normal;">
+        </p></h3>
+            <!-- <br/> -->
+    <p id="Quantitative_results_1"></p>
+    </div>
+    </div>
+
+	
+	<br/><h2 id="section3"> </h2>
+	    <!-- <br/>
+	    <br/>
+	    <br/>
+	    <br/> -->
+    <!-- <div style="border: 2px solid rgb(209, 206, 206); border-radius: 15px; padding: 10px;width:1100px; margin:auto;box-shadow: 1px 1px 2px 6px rgb(209, 206, 206)">
+    <div style="border: 2px solid white; border-radius: 15px; width:1000px; margin:auto;height: 200;"> -->
+        <!-- <br/> -->
+
+<!-- <h2><p style="font-size:1.3em;text-align:center; font-family: 'Times New Roman';font-weight: normal;">3D Motion Optimization Module</p></h2> -->
+	<!-- <h2><p style="font-size:1.3em;text-align:center; font-family: 'Times New Roman';font-weight: normal;"></span> 3D Motion Optimization Module</p></h2> -->
+    <!-- <h2><p style="color:black; font-size:2em;text-align:center; font-family: 'Noto Sans', sans-serif; letter-spacing: -1.2px; font-weight: bold; margin-top: 30px; margin-bottom: 10px;"></span> 3D Motion Optimization Module</p></h2> -->
+    <div style="border: 2px solid white; border-radius: 15px; width:1000px; margin:auto;height: 200;">                
+        <h3><p style="color:black; font-size:1.5em; font-family: 'Noto Sans', sans-serif; letter-spacing: -1.2px; font-weight: bold;"></span> 3D Motion Optimization Module</p></h3>
+        <!-- <h3><p style="color:#4a4a4a;font-size:1.0em; font-family: 'Noto Sans', sans-serif; font-weight: normal; text-align: justify;"> -->
+            To maintain consistency of motion across multi-views, 3D motion is defined from the point cloud and projected into 2D images using camera parameters.
+            The L1 loss between the projected 2D motion and the estimated 2D motion map as the ground truth is computed, minimizing the sum of losses for multi-view to optimize the 3D motion.
+        </p></h3>
+	    <br>
+
+<!--  	<center><img src="static/project_page/TMM_fig2_3.png" alt="My Image" width="1000"></center>  -->
+        <h3><p style="color:black;font-size:0.9em; font-family: 'Times New Roman';font-weight: bold;">
+	<div style="text-align:center;">
+	<iframe width="800" height="600" src="https://www.youtube.com/embed/EquYFtYc-00" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+	</div>
+	</p></h3>
+            <br/>
+    <br/><p id="Quantitative_results_1"></p>
+    </div>
+    </div>
+
+<br/><p id="Visualization Results"></p>
+    </div>
+    </div>
+	<br/><h2 id="section4"> </h2>
+
+    <!-- <div style="border: 2px solid rgb(209, 206, 206); border-radius: 15px; padding: 10px;width:1100px; margin:auto;box-shadow: 1px 1px 2px 6px rgb(209, 206, 206)">
+    <div style="border: 2px solid white; border-radius: 15px; width:1000px; margin:auto;height: 200;">
+	    <br/> -->
+	    
+	    <!-- <h2><p style="font-size:1.3em;text-align:center; font-family: 'Times New Roman';font-weight: normal;">Experiments Results</p></h2> -->
+        <h2><p style="color:black; font-size:2em;text-align:center; font-family: 'Noto Sans', sans-serif; letter-spacing: -1.2px; font-weight: bold; margin-top: 30px; margin-bottom: 10px;"></span> Experiments Results</p></h2>
+        <div style="border: 2px solid white; border-radius: 15px; width:1000px; margin:auto;height: 200;">                
+            <h3><p style="color:black; font-size:1.5em; font-family: 'Noto Sans', sans-serif; letter-spacing: -1.2px; font-weight: bold;"></span> Results of Holynski Dataset</p></h3>
+            <div style="border: 2px solid white; border-radius: 15px; width:1000px; margin:auto;height: 200;">
+                <h3><p style="color:#4a4a4a;font-size:1.0em; font-family: 'Noto Sans', sans-serif; font-weight: normal; text-align: justify;">
+                    We present qualitative comparison with other baseline methods and diffusion-based methods. 
+                    In this case, our proposed model, as an explicit representation, is projected to 2D video for comparison of results. 
+                    The process of separating the input image into LDIs in 3D-Cinemagraphy (Li et al., 2023) leads to artifacts on animated regions and fails to provide natural motion which results in reduced realism. 
+                    Similarly, Make-It-4D (Shen et al., 2023) also utilizes LDIs to represent 3D for multi-view generation, which results in lower visual quality. 
+                    Additionally, due to unclear layer separation, objects appear fragmented or exhibit ghosting effects, where objects seem to leave behind afterimages. 
+                    Likewise, DynamiCrafter (Xing et al., 2025) and Motion-I2V (Shi et al., 2024), though capable of producing cinemagraphy, encounter challenges in accurately rendering the desired views due to limited capabilities in view manipulation. 
+                    In contrast, the proposed model represents a complete 3D space with animations, providing less visual artifact and high rendering quality from various camera viewpoints. 
+                    Therefore, our method provides more photorealistic results compared to others for various input images.
+
+	    <div class="slideshow-container" id="slideshow_holynski">
+	        <div class="video-slide">
+		    <center><img src="static/title/holynski_2.png" alt="My Image" width="1000"></center>
+	            <video width="1000" controls autoplay loop muted>
+	                <source src="static/holynski1_0.mp4" type="video/mp4">
+	                Your browser does not support the video tag.
+	            </video>
+	        </div>
+	        <div class="video-slide">
+		    <center><img src="static/title/holynski_2.png" alt="My Image" width="1000"></center>
+	            <video width="1000" controls autoplay loop muted>
+	                <source src="static/holynski2_0.mp4" type="video/mp4">
+	                Your browser does not support the video tag.
+	            </video>
+	        </div>
+	        <a class="prev" onclick="plusSlides(-1, 'slideshow_holynski')">&#10094;</a>
+	        <a class="next" onclick="plusSlides(1, 'slideshow_holynski')">&#10095;</a>
+	        </div>
+	        <div class="slideshow-container" id="slideshow_holynski1">
+	        <div class="video-slide">
+		    <center><img src="static/title/holynski_0.png" alt="My Image" width="1000"></center>
+	            <video width="1000" controls autoplay loop muted>
+	                <source src="static/project_page/holynski/test_19/side.mp4" type="video/mp4">
+	                Your browser does not support the video tag.
+	            </video>
+	        </div>
+	        <div class="video-slide">
+		    <center><img src="static/title/holynski_0.png" alt="My Image" width="1000"></center>
+	            <video width="1000" controls autoplay loop muted>
+	                <source src="static/project_page/holynski/test_26/zoom.mp4" type="video/mp4">
+	                Your browser does not support the video tag.
+	            </video>
+	        </div>
+	        <!-- Add more video slides as needed -->
+	        <a class="prev" onclick="plusSlides(-1, 'slideshow_holynski1')">&#10094;</a>
+	        <a class="next" onclick="plusSlides(1, 'slideshow_holynski1')">&#10095;</a>
+	    </div>
+        <!-- <div style="border: 2px solid white; border-radius: 15px; width:1000px; margin:auto;height: 200;">
+        <h3><p style="color:#4a4a4a;font-size:1.0em; font-family: 'Noto Sans', sans-serif; font-weight: normal; text-align: justify;">
+            In the figure above, we present qualitative comparison results with other baseline methods and diffusion-based methods. 
+		    In this case, our proposed model, as an explicit representation, is projected to 2D video for comparison of results. 
+		    The process of separating the input image into LDIs in 3D-Cinemagraphy (Li et al., 2023) leads to artifacts on animated regions and fails to provide natural motion which results in reduced realism. 
+		    Similarly, Make-It-4D (Shen et al., 2023) also utilizes LDIs to represent 3D for multi-view generation, which results in lower visual quality. 
+		    Additionally, due to unclear layer separation, objects appear fragmented or exhibit ghosting effects, where objects seem to leave behind afterimages. 
+		    Likewise, DynamiCrafter (Xing et al., 2025) and Motion-I2V (Shi et al., 2024), though capable of producing cinemagraphy, encounter challenges in accurately rendering the desired views due to limited capabilities in view manipulation. 
+		    In contrast, the proposed model represents a complete 3D space with animations, providing less visual artifact and high rendering quality from various camera viewpoints. 
+		    Therefore, our method provides more photorealistic results compared to others for various input images. -->
+	    <!-- <br/> -->
+<!--     </div>
+    </div>
+    <div style="border: 2px solid rgb(209, 206, 206); border-radius: 15px; padding: 10px;width:1100px; margin:auto;box-shadow: 1px 1px 2px 6px rgb(209, 206, 206)">
+    <div style="border: 2px solid white; border-radius: 15px; width:1000px; margin:auto;height: 200;">
+	        <br/>
+	    <h2><p style="font-size:1.3em;text-align:center; font-family: 'Times New Roman';font-weight: normal;">Experiments Results 2</p></h2> -->
+	    <!-- <br/>
+	    <br/> -->
+		<br/>    
+	    <!-- <h3><p style="font-size:1.3em; font-family: 'Times New Roman';font-weight: normal;"></span> 2) Results of "In-the-Wild" Dataset</p></h3> -->
+        
+        <h3><p style="color:black; font-size:1.5em; font-family: 'Noto Sans', sans-serif; letter-spacing: -1.2px; font-weight: bold;"></span> Results of "In-the-Wild" Dataset</p></h3>
+        <h3><p style="color:#4a4a4a;font-size:1.0em; font-family: 'Noto Sans', sans-serif; font-weight: normal; text-align: justify;">
+            <!-- We verified our results qualitatively and quantitatively using Holinsky et al. 
+            (Holynski et al., 2021), which is commonly used for validation in the field of Dynamic Scene Video.  -->
+            Additionally, to compare the performance of our method with baseline models, we use our “in-the-wild” dataset, which we collect of global landmarks from online sources. 
+            The figure above demonstrate that our model outperforms baseline models by producing more realistic and stable videos across a variety of complex scenarios.
+
+	        <div class="slideshow-container" id="slideshow_InTheWilde">
+	        <div class="video-slide">
+		    <center><img src="static/title/holynski_0.png" alt="My Image" width="1000"></center>
+	            <video width="1000" controls autoplay loop muted>
+	                <source src="static/project_page/last/inthewild_3.mp4" type="video/mp4">
+	                Your browser does not support the video tag.
+	            </video>
+	        </div>
+		<div class="video-slide">
+		    <center><img src="static/title/holynski_0.png" alt="My Image" width="1000"></center>
+	            <video width="1000" controls autoplay loop muted>
+	                <source src="static/videos/5.additional_results1/side.mp4" type="video/mp4">
+	                Your browser does not support the video tag.
+	            </video>
+	        </div>
+	        <div class="video-slide">
+		    <center><img src="static/title/holynski_0.png" alt="My Image" width="1000"></center>
+	            <video width="1000" controls autoplay loop muted>
+	                <source src="static/videos/5.additional_results1/up34.mp4" type="video/mp4">
+	                Your browser does not support the video tag.
+	            </video>
+	        </div>
+		<div class="video-slide">
+		    <center><img src="static/title/holynski_0.png" alt="My Image" width="1000"></center>
+	            <video width="1000" controls autoplay loop muted>
+	                <source src="static/videos/5.additional_results1/side31.mp4" type="video/mp4">
+	                Your browser does not support the video tag.
+	            </video>
+	        </div>
+		<div class="video-slide">
+		    <center><img src="static/title/holynski_0.png" alt="My Image" width="1000"></center>
+	            <video width="1000" controls autoplay loop muted>
+	                <source src="static/videos/5.additional_results1/side39.mp4" type="video/mp4">
+	                Your browser does not support the video tag.
+	            </video>
+	        </div>
+		<div class="video-slide">
+		    <center><img src="static/title/holynski_0.png" alt="My Image" width="1000"></center>
+	            <video width="1000" controls autoplay loop muted>
+	                <source src="static/videos/5.additional_results1/side41.mp4" type="video/mp4">
+	                Your browser does not support the video tag.
+	            </video>
+	        </div>
+		<div class="video-slide">
+		    <center><img src="static/title/holynski_0.png" alt="My Image" width="1000"></center>
+	            <video width="1000" controls autoplay loop muted>
+	                <source src="static/videos/5.additional_results1/up1.mp4" type="video/mp4">
+	                Your browser does not support the video tag.
+	            </video>
+	        </div>
+		<div class="video-slide">
+		    <center><img src="static/title/holynski_0.png" alt="My Image" width="1000"></center>
+	            <video width="1000" controls autoplay loop muted>
+	                <source src="static/videos/5.additional_results1/up38.mp4" type="video/mp4">
+	                Your browser does not support the video tag.
+	            </video>
+	        </div>
+		<div class="video-slide">
+		    <center><img src="static/title/holynski_0.png" alt="My Image" width="1000"></center>
+	            <video width="1000" controls autoplay loop muted>
+	                <source src="static/videos/5.additional_results1/zoom35.mp4" type="video/mp4">
+	                Your browser does not support the video tag.
+	            </video>
+	        </div>
+		<div class="video-slide">
+		    <center><img src="static/title/holynski_0.png" alt="My Image" width="1000"></center>
+	            <video width="1000" controls autoplay loop muted>
+	                <source src="static/videos/5.additional_results1/zoom43.mp4" type="video/mp4">
+	                Your browser does not support the video tag.
+	            </video>
+	        </div>
+		<div class="video-slide">
+		    <center><img src="static/title/holynski_0.png" alt="My Image" width="1000"></center>
+	            <video width="1000" controls autoplay loop muted>
+	                <source src="static/videos/5.additional_results1/circle.mp4" type="video/mp4">
+	                Your browser does not support the video tag.
+	            </video>
+	        </div>
+	        <!-- Add more video slides as needed -->
+	        <a class="prev" onclick="plusSlides(-1, 'slideshow_InTheWilde')">&#10094;</a>
+	        <a class="next" onclick="plusSlides(1, 'slideshow_InTheWilde')">&#10095;</a>
+	    </div>
+        
+        <!-- <h3><p style="color:#4a4a4a;font-size:1.0em; font-family: 'Noto Sans', sans-serif; font-weight: normal; text-align: justify;">
+            We verified our results qualitatively and quantitatively using Holinsky et al. 
+		(Holynski et al., 2021), which is commonly used for validation in the field of Dynamic Scene Video. 
+		Additionally, to compare the performance of our method with baseline models, we use our “in-the-wild” dataset, which we collect of global landmarks from online sources. 
+		The figure above demonstrate that our model outperforms baseline models by producing more realistic and stable videos across a variety of complex scenarios. -->
+        <br/>
+        <br/>
+
+        <h3><p style="color:black; font-size:1.5em; font-family: 'Noto Sans', sans-serif; letter-spacing: -1.2px; font-weight: bold;"></span> Quantitative Results</p></h3>
+        <h3><p style="color:#4a4a4a;font-size:1.0em; font-family: 'Noto Sans', sans-serif; font-weight: normal; text-align: justify;">
+            <!-- <strong>Results comparing our framework to the previous dynamic scene video model:</strong> -->
+            We show the quantitative results of our method compared to other baselines on reference and non-reference metrics. 
+            Our approach outperforms the other baseline on all metrics in the context of view generation. 
+            In particular, our method achieved the highest scores in PSNR, SSIM, and LPIPS, indicating that the generated views are of high fidelity and perceptually similar to the ground truth views. 
+            Furthermore, we demonstrated that our proposed method outperforms existing methods on non-reference metrics by locally measuring the extent of noise and distortion in images using PIQE (Venkatanath et al., 2015). 
+            Additionally, we conduct a user study on the generated videos, confirming that our model not only outperform in quantitative metrics but also surpasses in user experiences across four visual aspects.
+	            <!-- <br/> -->
+        <br/>
+		    <center><img src="static/project_page/quanti.png" alt="My Image" width="1000"></center>
+		<!-- <br/> -->
+	    <br/><p id="add_Visualization Results"></p>
+	    <!-- <br/> -->
+	    </div>
+	    </div>
+
+
+	
+     <br/><h2 id="section5"> </h2>
+	    <!-- <br/>
+	    <br/>
+	    <br/>
+	    <br/>
+    <div style="border: 2px solid rgb(209, 206, 206); border-radius: 15px; padding: 10px;width:1100px; margin:auto;box-shadow: 1px 1px 2px 6px rgb(209, 206, 206)">
+    <div style="border: 2px solid white; border-radius: 15px; width:1000px; margin:auto;height: 200;">
+           <br/> -->
+    <br/>
+    <h2><p style="color:black; font-size:2em;text-align:center; font-family: 'Noto Sans', sans-serif; letter-spacing: -1.2px; font-weight: bold; margin-top: 30px; margin-bottom: 10px;"></span> Application: 4D Scene Generation</p></h2>
+    <!-- <h2><p style="font-size:1.3em;text-align:center; font-family: 'Times New Roman';font-weight: normal;">Application: 4D Scene Generation</p></h2> -->
+        <div style="border: 2px solid white; border-radius: 15px; width:1000px; margin:auto;height: 200;">                
+            <h3><p style="color:black; font-size:1.5em; font-family: 'Noto Sans', sans-serif; letter-spacing: -1.2px; font-weight: bold;"></span> 3D Scene Generation + Dynamic Scene Video</p></h3>
+        <!-- <h3><p style="font-size:1.3em; font-family: 'Times New Roman';font-weight: normal;"></span> 1) 3D Scene Generation + Dynamic Scene Video</p></h3> -->
+	<!-- <br> -->
+        <div style="border: 2px solid white; border-radius: 15px; width:1000px; margin:auto;height: 200;">
+        <h3><p style="color:#4a4a4a;font-size:1.0em; font-family: 'Noto Sans', sans-serif; font-weight: normal; text-align: justify;">
+	    Our framework is designed to seamlessly incorporate 3D scene generation models, facilitating straightforward spatial expansion. 
+	    The figure below shows the results of incorporating the 3D Scene Generation model, LucidDreamer (Chung et al., 2023), into our method. 
+	    LucidDreamer converts single images into point clouds and progressively fills empty areas with an inpainting model, enabling spatio temporal expansion when incorporated into our framework. 
+	    This incorporation enables the creation of videos with more natural motion and expansive views.
+	    <div class="flex-container">
+    </div>
+        <div class="slideshow-container" id="slideshow_Lucid">
+        <div class="video-slide">
+	    <center><img src="static/project_page/last/lucid_title.png" alt="My Image" width="1000"></center>
+            <video width="1000" controls autoplay loop muted>
+                <source src="static/project_page/luciddream/lucid_1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="video-slide">
+	    <center><img src="static/project_page/last/lucid_title.png" alt="My Image" width="1000"></center>
+            <video width="1000" controls autoplay loop muted>
+                <source src="static/project_page/luciddream/lucid_0.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <a class="prev" onclick="plusSlides(-1, 'slideshow_Lucid')">&#10094;</a>
+        <a class="next" onclick="plusSlides(1, 'slideshow_Lucid')">&#10095;</a>
+    </div>	    
+    <br/>
+    <div class="slideshow-container" id="slideshow_Lucid1">
+        <div class="video-slide">
+	    <center><img src="static/project_page/last/lucid_title.png" alt="My Image" width="1000"></center>
+            <video width="1000" controls autoplay loop muted>
+                <source src="static/project_page/luciddream/lucid_20.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="video-slide">
+	    <center><img src="static/project_page/last/lucid_title.png" alt="My Image" width="1000"></center>
+            <video width="1000" controls autoplay loop muted>
+                <source src="static/project_page/luciddream/lucid_111.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <a class="prev" onclick="plusSlides(-1, 'slideshow_Lucid1')">&#10094;</a>
+        <a class="next" onclick="plusSlides(1, 'slideshow_Lucid1')">&#10095;</a>
+    </div>
+    <br/>
+    
+    <div style="border: 2px solid white; border-radius: 15px; width:1000px; margin:auto;height: 200;">                
+        <h3><p style="color:black; font-size:1.5em; font-family: 'Noto Sans', sans-serif; letter-spacing: -1.2px; font-weight: bold;"></span> Comparative Result with VividDream</p></h3>
+    <!-- <h3><p style="font-size:1.3em; font-family: 'Times New Roman';font-weight: normal;"></span> 2) Comparative Result with VividDream</p></h3>
+		<br> -->
+        <h3><p style="color:#4a4a4a;font-size:1.0em; font-family: 'Noto Sans', sans-serif; font-weight: normal; text-align: justify;">
+    	    <!-- The figure below compares the results of incorporate our framework with LucidDreamer (Chung et al., 2023) and Viewcrafter (Yu et al., 2024),
+			which generates multi-view video conditioned on point cloud rendered video in single diffusion pass, with VividDream (Lee et al., 2024).  -->
+			Additionally, we conduct comparisons with recent work on the 4D Scene Generation model, VividDream (Lee et al., 2024). 
+			Unlike our approach, VividDream directly generates multi-view videos through the T2V model without utilizing motion estimation for temporal expansion.  
+			We render the comparisons using the closest matching images and cameras available, as the code and data were not disclosed. 
+			Since VividDream (Lee et al., 2024) generates videos independently from multiple views, this approach results in motion ambiguity that leads to blurred reconstructions in fluid scenes, 
+			failing to accurately capture various motions. 
+			In contrast, our method estimates consistent 3D motion based on 2D motion, subsequently generating videos that achieve high-quality video with more natural motion.
+        <div class="slideshow-container" id="slideshow_vivid">
+        <div class="video-slide">
+	    <center><img src="static/title/vivid.png" alt="My Image" width="1000"></center>
+            <video width="1000" controls autoplay loop muted>
+                <source src="static/project_page/VividDream_0.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+    <div class="slideshow-container" id="slideshow_vivid2">
+        <div class="video-slide">
+	    <center><img src="static/title/vivid.png" alt="My Image" width="1000"></center>
+            <video width="1000" controls autoplay loop muted>
+                <source src="static/project_page/luciddream/holynski2_1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
+	    
+        <h3><p style="color:black;font-size:0.9em; font-family: 'Times New Roman';font-weight: normal;">
+        </p></h3>
+            <br/>
+    <br/><p id="Quantitative_results_1"></p>
+    </div>
+    </div>
+
+
+		
+    <br/><h2 id="section6"> </h2>
+    <!-- <br/>
+	<br/>	
+    <br/>
+    <br/>
+    <div style="border: 2px solid rgb(209, 206, 206); border-radius: 15px; padding: 10px;width:1100px; margin:auto;box-shadow: 1px 1px 2px 6px rgb(209, 206, 206)">
+    <div style="border: 2px solid white; border-radius: 15px; width:1000px; margin:auto;height: 200;">
+            <br/> -->
+    <h2><p style="color:black; font-size:2em;text-align:center; font-family: 'Noto Sans', sans-serif; letter-spacing: -1.2px; font-weight: bold; margin-top: 30px; margin-bottom: 10px;"></span> 3D Motion Optimization Module</p></h2>
+    <h3><p style="color:#4a4a4a;font-size:1.0em; font-family: 'Noto Sans', sans-serif; font-weight: normal; text-align: justify;">
+        Independently estimated 2D motions from multi-view images can yield different motion values for the same region in 3D space.
+        Table II shows the EPE results comparing multi-view flows with and without the 3D Motion Optimization Module. 
+        The results indicate that without 3D Motion Optimization, the estimated flows significantly differ at the same positions, whereas our 3D motion module achieves remarkable consistency across all viewpoints with almost no variance. 
+        Similarly, the visualized motions in Fig (a) demonstrate that 3D motion accurately represents motion information in 3D space, ensuring consistency when projected to different viewpoints. 
+        Lastly, Fig (b) illustrates that directly using these 2D motions to animate viewpoint videos leads to the inability of 4D Gaussians to represent natural motion.
+            
+    <!-- <h2><p style="font-size:1.3em;text-align:center; font-family: 'Times New Roman';font-weight: normal;">3D Motion Optimization</p></h2> -->
+    <br/>
+	        <br/>
+<!--     <h3><p style="font-size:1.3em; font-family: 'Times New Roman';font-weight: normal;">1) 3D Motion Optimization Module</p></h3> -->
+    <!-- Flexbox를 이용하여 이미지 2개 병렬 배치 -->
+    <div class="flex-container">
+        <center><img src="static/videos/ablation1.png" alt="My Image" width="380"></center>
+        <center><img src="static/videos/table2.png" alt="My Image" width="580"></center>
+    </div>
+    <div class="slideshow-container" id="slideshow2">
+        <div class="video-slide">
+	    <center><img src="static/videos/3DMotion.png" alt="My Image" width="1000"></center>
+            <video width="1000" controls autoplay loop muted>
+                <source src="static/videos/1.3D_motion_optimzation/output_1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+	    <center><img src="static/videos/b.png" alt="My Image" width="1000"></center>
+        </div>
+        <div class="video-slide">
+	    <center><img src="static/videos/3DMotion.png" alt="My Image" width="1000"></center>
+            <video width="1000" controls autoplay loop muted>
+                <source src="static/videos/1.3D_motion_optimzation/output_2.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+	    <center><img src="static/videos/b.png" alt="My Image" width="1000"></center>
+        </div>
+        <div class="video-slide">
+	    <center><img src="static/videos/3DMotion.png" alt="My Image" width="1000"></center>
+            <video width="1000" controls autoplay loop muted>
+                <source src="static/videos/1.3D_motion_optimzation/output_3.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+	    <center><img src="static/videos/b.png" alt="My Image" width="1000"></center>
+        </div>
+	<div class="video-slide">
+	    <center><img src="static/videos/3DMotion.png" alt="My Image" width="1000"></center>
+            <video width="1000" controls autoplay loop muted>
+                <source src="static/videos/1.3D_motion_optimzation/output_0.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+	    <center><img src="static/videos/b.png" alt="My Image" width="1000"></center>
+        </div>
+        <!-- Add more video slides as needed -->
+        <a class="prev" onclick="plusSlides(-1, 'slideshow2')">&#10094;</a>
+        <a class="next" onclick="plusSlides(1, 'slideshow2')">&#10095;</a>
+    </div>
+    <!-- <h3><p style="color:black;font-size:1.0em; font-family: 'Times New Roman';font-weight: normal;text-align: justify;"> -->
+    <!-- <h3><p style="color:#4a4a4a;font-size:1.0em; font-family: 'Noto Sans', sans-serif; font-weight: normal; text-align: justify;">
+    <strong>3D Motion Optimization Module:</strong> Independently estimated 2D motion from multi-view images can result in different motion values for the same region in 3D space.
+	Directly using these 2D motions to animate viewpoint videos can fail to train 4D Gaussians to represent natural motion.
+	Table II shows the results of EPE between multi-view flows with and without the 3D Motion Optimization Module. 
+	The estimated motions are projected to the center point through a depth map for the same position measurement. 
+	The results indicate that without 3D Motion Optimization, estimated flows are significantly different for the same positions, while our 3D motion demonstrates outstanding performance in consistency across entire viewpoints with almost no variance. 
+	(a) shows the visualized results of 2D motion and projected 3D motion. 
+	Similarly, it indicates that 3D motion represents motion information in 3D space, which ensures consistency when projected to different viewpoints. 
+	We animated viewpoint videos using each motion and trained 4D Gaussians on multi-view videos. 
+	However, as shown in (b), the rendered video of 4D Gaussians and estimated optical flow have the lack of motion consistency in the viewpoint videos caused unnatural movements.
+         -->
+    <br/>
+    <br/>
+        <h3><p style="color:black;font-size:0.9em; font-family: 'Times New Roman';font-weight: normal;">
+        </p></h3>
+            <br/>
+    <br/><p id="Quantitative_results_1"></p>
+    </div>
+    </div>
+	<br/><h2 id="section7"> </h2>
+    <!-- <br/>
+    <br/>
+    <br/>
+    <br/> -->
+		
+    <!-- <div style="border: 2px solid rgb(209, 206, 206); border-radius: 15px; padding: 10px;width:1100px; margin:auto;box-shadow: 1px 1px 2px 6px rgb(209, 206, 206)">
+    <div style="border: 2px solid white; border-radius: 15px; width:1000px; margin:auto;height: 200;">
+            <br/> -->
+    <!-- <h2><p style="font-size:1.3em;text-align:center; font-family: 'Times New Roman';font-weight: normal;"></span> Single Image Animation</p></h2> -->
+    <h2><p style="color:black; font-size:2em;text-align:center; font-family: 'Noto Sans', sans-serif; letter-spacing: -1.2px; font-weight: bold; margin-top: 30px; margin-bottom: 10px;"></span> Single Image Animation</p></h2>
+	<!-- <h3><p style="color:black;font-size:1.0em; font-family: 'Times New Roman';font-weight: normal;text-align: justify;"> -->
+    <div style="border: 2px solid white; border-radius: 15px; width:1000px; margin:auto;height: 200;">                
+        <h3><p style="color:#4a4a4a;font-size:1.0em; font-family: 'Noto Sans', sans-serif; font-weight: normal; text-align: justify;">
+            In our model, it is crucial to utilize a single image animation model that precisely estimate 2D motion from Multi-view images and generate multi-view videos by accurately reflecting 3D motion.
+            The figure below shows the results of trained 4D Gaussians using animated videos by different single image animation models, SLR-SFS (Fan et al., 2023), Text2Cinemagraph (Mahapatra et al., 2023) and StyleCineGAN (Choi et al., 2024). 
+            The Eulerian flows estimated by each model enable the generation of consistent 3D motion through 3D-MOM, which facilitates the restoration of natural motion in 4D scene. 
+            Additionally StyleCineGAN (Choi et al., 2024) can generate natural videos not only of fluids like water but also of clouds and smoke, allowing for the generate various motions when utilized to our framework. 
+            
+	    <div class="slideshow-container" id="slideshow3">
+        <div class="video-slide">
+	    <center><img src="static/title/single.png" alt="My Image" width="1000"></center>
+            <video width="1000" controls autoplay loop muted>
+                <source src="static/project_page/last/single_0.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="video-slide">
+	    <center><img src="static/title/single.png" alt="My Image" width="1000"></center>
+            <video width="1000" controls autoplay loop muted>
+                <source src="static/project_page/last/single_1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="video-slide">
+	    <center><img src="static/title/single.png" alt="My Image" width="1000"></center>
+            <video width="1000" controls autoplay loop muted>
+                <source src="static/project_page/last/single_2.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+	<div class="video-slide">
+	    <center><img src="static/title/single.png" alt="My Image" width="1000"></center>
+            <video width="1000" controls autoplay loop muted>
+                <source src="static/project_page/last/single_3.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <!-- Add more video slides as needed -->
+
+        <a class="prev" onclick="plusSlides(-1, 'slideshow3')">&#10094;</a>
+        <a class="next" onclick="plusSlides(1, 'slideshow3')">&#10095;</a>
+    </div>
+    <!-- <h3><p style="color:black;font-size:1.0em; font-family: 'Times New Roman';font-weight: normal;text-align: justify;">
+	<strong>Single Image Animation Model:</strong> In our model, it is crucial to utilize a single image animation model that generates viewpoint videos by accurately reflecting 3D motion to train 4D Gaussians. 
+	Figure shows the results of trained 4D Gaussians using animated videos by two single image animation models, SLR-SFS and Text2Cinemagraph. 
+	Comparing the rendered 4D Gaussians, we observe that the motion is trained differently depending on the single image animation model. 
+	Additionally, training with viewpoint videos animated by SLR-SFS, our model produced better results. -->
+    <br/>
+    <br/>
+        <h3><p style="color:black;font-size:0.9em; font-family: 'Times New Roman';font-weight: normal;">
+        </p></h3>
+            <br/>
+    <br/><p id="Quantitative_results_1"></p>
+    </div>
+    </div>	
+    <!-- <br/> -->
+
+
+        
+		
+    <br/><h2 id="section8"> </h2>
+	    <!-- <br/>
+	    <br/>
+	    <br/>
+	    <br/> -->
+    <!-- <div style="border: 2px solid rgb(209, 206, 206); border-radius: 15px; padding: 10px;width:1100px; margin:auto;box-shadow: 1px 1px 2px 6px rgb(209, 206, 206)">
+
+        <br/>
+        <div style="border: 2px solid white; border-radius: 15px; width:1000px; margin:auto;height: 200;"> -->
+    <!-- <h2><p style="font-size:1.3em;text-align:center; font-family: 'Times New Roman';font-weight: normal;">3D Motion Initialization</p></h2> -->
+    <h2><p style="color:black; font-size:2em;text-align:center; font-family: 'Noto Sans', sans-serif; letter-spacing: -1.2px; font-weight: bold; margin-top: 30px; margin-bottom: 10px;"></span> 3D Motion Initialization</p></h2>
+        <div style="border: 2px solid white; border-radius: 15px; width:1000px; margin:auto;height: 200;">                
+            <h3><p style="color:#4a4a4a;font-size:1.0em; font-family: 'Noto Sans', sans-serif; font-weight: normal; text-align: justify;">            
+                To verify the effect of 3D motion in training 4D Gaussians, we compared the results of our method with and without 3D motion initialization. 
+                When applying animation to fluids, repeated patterns occurred. In Table III, it shows EPE score of estimated optical flow from each rendered video. 
+                It indicates that the explicit representation of 4D Gaussians, which train multi-views and motion jointly, finds it difficult to capture the overall motion
+                accurately when trained only with viewpoint videos.
+                Figure shows the estimated optical flow from the rendered video of 4D Gaussians. This demonstrates that it is difficult to accurately learn motion without 3D motion initialization. 
+                In contrast, our method shows that it can learn the overall 3D motion.
+	    <br/>
+<!-- 		<h3><p style="font-size:1.3em; font-family: 'Times New Roman';font-weight: normal;">3) Effect of 3D motion initialization</p></h3> -->
+    <!-- Flexbox를 이용하여 이미지 2개 병렬 배치 -->
+    <div class="flex-container">
+        <center><img src="static/videos/ablation2.png" alt="My Image" width="580"></center>
+        <center><img src="static/videos/table3.png" alt="My Image" width="380"></center>
+    </div>
+        <div class="slideshow-container" id="slideshow4">
+        <div class="video-slide">
+	    <center><img src="static/videos/abl3.png" alt="My Image" width="1000"></center>
+            <video width="1000" controls autoplay loop muted>
+                <source src="static/videos/3.effect_of_3D_motion_initialization/output_1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="video-slide">
+	    <center><img src="static/videos/abl3.png" alt="My Image" width="1000"></center>
+            <video width="1000" controls autoplay loop muted>
+                <source src="static/videos/3.effect_of_3D_motion_initialization/output_2.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="video-slide">
+	    <center><img src="static/videos/abl3.png" alt="My Image" width="1000"></center>
+            <video width="1000" controls autoplay loop muted>
+                <source src="static/videos/3.effect_of_3D_motion_initialization/output_3.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+	<div class="video-slide">
+	    <center><img src="static/videos/abl3.png" alt="My Image" width="1000"></center>
+            <video width="1000" controls autoplay loop muted>
+                <source src="static/videos/3.effect_of_3D_motion_initialization/output_0.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <!-- Add more video slides as needed -->
+
+        <a class="prev" onclick="plusSlides(-1, 'slideshow4')">&#10094;</a>
+        <a class="next" onclick="plusSlides(1, 'slideshow4')">&#10095;</a>
+    </div>
+
+    <br/>
+
+        <br/><p id="Quantitative_results_2"></p>
+    </div>
+    </div>
+
+    <br/><h2 id="section9"> </h2>
+	    <!-- <br/>
+	    <br/>
+	    <br/>
+	    <br/> -->
+    <!-- <div style="border: 2px solid rgb(209, 206, 206); border-radius: 15px; padding: 10px;width:1100px; margin:auto;box-shadow: 1px 1px 2px 6px rgb(209, 206, 206)">
+    <div style="border: 2px solid white; border-radius: 15px; width:1000px; margin:auto;height: 200;">
+            <br/> -->
+
+    <h2><p style="color:black; font-size:2em;text-align:center; font-family: 'Noto Sans', sans-serif; letter-spacing: -1.2px; font-weight: bold; margin-top: 30px; margin-bottom: 10px;"></span> 4D Gaussian Splatting</p></h2>
+    <!-- <h2><p style="font-size:1.3em;text-align:center; font-family: 'Times New Roman';font-weight: normal;"></span> 4D Gaussian Splatting</p></h2> -->
+    <div style="border: 2px solid white; border-radius: 15px; width:1000px; margin:auto;height: 200;">                
+        <h3><p style="color:#4a4a4a;font-size:1.0em; font-family: 'Noto Sans', sans-serif; font-weight: normal; text-align: justify;">
+            Since our framework utilizes 4D Gaussians to model complete 3D spaces with motion, the expressiveness of the model itself significantly influences the quality of the final results. 
+            The figure below shows the results of implementing the Deformable-3D (Yang et al., 2024) within our framework. 
+            Compared to previous results using 4D-GS (Wu et al., 2024), it reconstructs low-fidelity 4D scenes and generates videos with reduced realism. 
+            Therefore, by utilizing 4D-GS (Wu et al., 2024), our framework is capable of producing more immersive Dynamic Scene Videos. 
+            This experiment demonstrates the adaptability of our model, and as advancements are made in the field of 4D Gaussians, the performance of our framework also improves.
+	    <div class="flex-container">
+    </div>
+        <div class="slideshow-container" id="slideshow_4D_ablation">
+        <div class="video-slide">
+	    <center><img src="static/project_page/last/4d_title.png" alt="My Image" width="1000"></center>
+            <video width="1000" controls autoplay loop muted>
+                <source src="static/project_page/4D_ablation/4D_ablation_scene1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="video-slide">
+	    <center><img src="static/project_page/last/4d_title.png" alt="My Image" width="1000"></center>
+            <video width="1000" controls autoplay loop muted>
+                <source src="static/project_page/4D_ablation/4D_ablation_test_35.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="video-slide">
+	    <center><img src="static/project_page/last/4d_title.png" alt="My Image" width="1000"></center>
+            <video width="1000" controls autoplay loop muted>
+                <source src="static/project_page/4D_ablation/4D_ablation_test_41.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <!-- Add more video slides as needed -->
+
+        <a class="prev" onclick="plusSlides(-1, 'slideshow_4D_ablation')">&#10094;</a>
+        <a class="next" onclick="plusSlides(1, 'slideshow_4D_ablation')">&#10095;</a>
+    </div>	    
+    <br/>
+		    
+        <h3><p style="color:black;font-size:0.9em; font-family: 'Times New Roman';font-weight: normal;">
+        </p></h3>
+            <br/>
+    <br/><p id="Quantitative_results_1"></p>
+    </div>
+    </div>
+
+    <br/><h2 id="section10"> </h2>
+    <!-- <br/>
+    <br/>
+    <br/>
+    <br/>
+    <div style="border: 2px solid rgb(209, 206, 206); border-radius: 15px; padding: 10px;width:1100px; margin:auto;box-shadow: 1px 1px 2px 6px rgb(209, 206, 206)">
+    <div style="border: 2px solid white; border-radius: 15px; width:1000px; margin:auto;height: 200;"> -->
+            <!-- <br/> -->
+    <!-- <h2><p style="font-size:1.3em;text-align:center; font-family: 'Times New Roman';font-weight: normal;">Effect of Two-stage training</p></h2> -->
+    <h2><p style="color:black; font-size:2em;text-align:center; font-family: 'Noto Sans', sans-serif; letter-spacing: -1.2px; font-weight: bold; margin-top: 30px; margin-bottom: 10px;"></span> Effect of Two-stage training</p></h2>
+    <div style="border: 2px solid white; border-radius: 15px; width:1000px; margin:auto;height: 200;">                
+        <h3><p style="color:#4a4a4a;font-size:1.0em; font-family: 'Noto Sans', sans-serif; font-weight: normal; text-align: justify;">
+        To achieve faster and more stable results with our algorithm, we separated the 4D Gaussians learning process by viewpoints and time axis. 
+        In step 1, we trained 3D Gaussians using all viewpoints, and in step 2, we trained 4D Gaussians using videos from sampled view-points. 
+        Figure shows the results of training 4D Gaussians with animated videos for all viewpoints, while the bottom shows the results of our two-stage training approach trained on only three viewpoint videos. 
+        This demonstrates that our training method produces results almost identical to those obtained by training with videos from all viewpoints. 
+        Additionally, as shown in Table IV , which was evaluated on a sample validation set, our method not only maintains high performance but also achieves a significant efficiency improvement. 
+        It is over 30 times faster in generating videos and requires about one-third less time to train the 4D Gaussians, demonstrating an optimal balance between speed and accuracy.
+        <br/>
+    <!-- <br/>
+	        <br/> -->
+        <center><img src="static/videos/table4.png" alt="My Image" width="1000"></center>
+<!--         <center><img src="CVPR_2024_jpg/test_input_supp_6.jpg" alt="My Image" width="1000"></center> -->
+        <div class="slideshow-container" id="slideshow5">
+        <div class="video-slide">
+	    <center><img src="static/videos/abl4.png" alt="My Image" width="1000"></center>
+            <video width="1000" controls autoplay loop muted>
+                <source src="static/videos/4.effect_of_2-stage_learning/output_1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="video-slide">
+	    <center><img src="static/videos/abl4.png" alt="My Image" width="1000"></center>
+            <video width="1000" controls autoplay loop muted>
+                <source src="static/videos/4.effect_of_2-stage_learning/output_2.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="video-slide">
+	    <center><img src="static/videos/abl4.png" alt="My Image" width="1000"></center>
+            <video width="1000" controls autoplay loop muted>
+                <source src="static/videos/4.effect_of_2-stage_learning/output_3.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+	<div class="video-slide">
+	    <center><img src="static/videos/abl4.png" alt="My Image" width="1000"></center>
+            <video width="1000" controls autoplay loop muted>
+                <source src="static/videos/4.effect_of_2-stage_learning/output_0.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <!-- Add more video slides as needed -->
+
+        <a class="prev" onclick="plusSlides(-1, 'slideshow5')">&#10094;</a>
+        <a class="next" onclick="plusSlides(1, 'slideshow5')">&#10095;</a>
+   
+    <br/>
+
+	    
+        <h3><p style="color:black;font-size:0.9em; font-family: 'Times New Roman';font-weight: normal;">
+        </p></h3>
+            <br/>
+    <br/><p id="Quantitative_results_1"></p>
+    </div>
+    </div>
+
+    <br/><h2 id="section12"> </h2>
+    <!-- <br/>
+    <br/>
+    <br/>
+    <br/> -->
+    <!-- <div style="border: 2px solid rgb(209, 206, 206); border-radius: 15px; padding: 10px;width:1100px; margin:auto;box-shadow: 1px 1px 2px 6px rgb(209, 206, 206)">
+    <div style="border: 2px solid white; border-radius: 15px; width:1000px; margin:auto;height: 200;">
+            <br/> -->
+    <h2><p style="color:black; font-size:2em;text-align:center; font-family: 'Noto Sans', sans-serif; letter-spacing: -1.2px; font-weight: bold; margin-top: 30px; margin-bottom: 10px;"></span> Multi-view Rendered RGB Images</p></h2>
+
+    <!-- <h2><p style="font-size:1.2em;text-align:center; font-family: 'Times New Roman';font-weight: normal;"></span> Supplementary Video for Sec 3.1: Multi-view Rendered RGB Images</p></h2> -->
+        <div class="slideshow-container" id="slideshow31">
+        <div class="video-slide" style="display: flex; justify-content: center;">
+            <video width="800" controls autoplay loop muted>
+                <source src="static/project_page/last/1129.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <!-- Add more video slides as needed -->
+<!-- 
+        <a class="prev" onclick="plusSlides(-1, 'slideshow31')">&#10094;</a>
+        <a class="next" onclick="plusSlides(1, 'slideshow31')">&#10095;</a> -->
+    </div>
+<!--     <h3><p style="color:black;font-size:1.0em; font-family: 'Times New Roman';font-weight: normal;text-align: justify;">
+	<strong>Effect of Two-stage training:</strong> To achieve faster and more stable results with our algorithm, we separated the 4D Gaussians learning process by viewpoints and time axis. 
+	In step 1, we trained 3D Gaussians using all viewpoints, and in step 2, we trained 4D Gaussians using videos from sampled view-points. 
+	Figure shows the results of training 4D Gaussians with animated videos for all viewpoints, while the bottom shows the results of our two-stage training approach trained on only three viewpoint videos. 
+	This demonstrates that our training method produces results almost identical to those obtained by training with videos from all viewpoints. 
+	Additionally, as shown in Table IV , which was evaluated on a sample validation set, our method not only maintains high performance but also achieves a significant efficiency improvement. 
+	It is over 30 times faster in generating videos and requires about one-third less time to train the 4D Gaussians, demonstrating an optimal balance between speed and accuracy. -->
+    <br/>
+    <br/>
+
+	    
+        <h3><p style="color:black;font-size:0.9em; font-family: 'Times New Roman';font-weight: normal;">
+        </p></h3>
+            <br/>
+    <br/><p id="Quantitative_results_1"></p>
+    </div>
+    </div>
+    	    
+    <br/><h2 id="section11"> </h2>
+    <!-- <br/>
+	<br/>	
+	    <br/>
+	<br/>	 -->
+    <!-- <div style="border: 2px solid rgb(209, 206, 206); border-radius: 15px; padding: 10px;width:1100px; margin:auto;box-shadow: 1px 1px 2px 6px rgb(209, 206, 206)">
+    <div style="border: 2px solid white; border-radius: 15px; width:1000px; margin:auto;height: 200;">
+            <br/> -->
+    <h2><p style="color:black; font-size:2em;text-align:center; font-family: 'Noto Sans', sans-serif; letter-spacing: -1.2px; font-weight: bold; margin-top: 30px; margin-bottom: 10px;"></span> Long Video Results</p></h2>
+
+    <!-- <h2><p style="font-size:1.3em;text-align:center; font-family: 'Times New Roman';font-weight: normal;"></span> Long Video Results</p></h2> -->
+    <!-- <br/>
+	        <br/> -->
+        <div style="border: 2px solid white; border-radius: 15px; width:1000px; margin:auto;height: 200;">                
+            <h3><p style="color:#4a4a4a;font-size:1.0em; font-family: 'Noto Sans', sans-serif; font-weight: normal; text-align: justify;">
+                Recent diffusion-based T2V models capable of simultaneously generating multi-angle images and cinemagraphy, similar to Dynamic Scene Videos, have emerged (Shi et al., 2024), (Xing et al., 2025). 
+                However, these models experience a sharp increase in computational load with the number of frames, limiting them to a maximum of 30 frames per inference and requiring lengthy inference times for each new view. 
+                In contrast, our framework can reconstruct long durations using explicit 4D Gaussians, allowing for the creation of novel view videos in a shorter time and at a lower cost. 
+                Fig. 14 demonstrates that our framework can produce long videos maintaining natural motion and high-fidelty, capable of generating up to 330 frames. 
+                The high compatibility of our framework ensures that as the field of 4D Gaussians advances, the performance of our framework also improves, enabling the production of longer Dynamic Scene Videos.
+        <br/>
+<!-- 	<div style="text-align:center;">
+	    <iframe width="400" height="300" src="https://www.youtube.com/embed/H3m4E5h-Kmk?si=hJseHTeCFeXFhYs6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    	</div>
+    <br/>
+    <br/>
+    	<div style="text-align:center;">
+	    <iframe width="400" height="300" src="https://www.youtube.com/embed/mB_EQtTqkqs?si=wSwPDirsKkICh_tL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    	</div> -->
+    <br/>
+	<div style="display: flex; justify-content: center; gap: 20px;">
+	    <iframe width="400" height="300" 
+	            src="https://www.youtube.com/embed/H3m4E5h-Kmk?si=hJseHTeCFeXFhYs6" 
+	            title="YouTube video player" 
+	            frameborder="0" 
+	            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+	            referrerpolicy="strict-origin-when-cross-origin" 
+	            allowfullscreen>
+	    </iframe>
+	    <iframe width="400" height="300" 
+	            src="https://www.youtube.com/embed/mB_EQtTqkqs?si=wSwPDirsKkICh_tL" 
+	            title="YouTube video player" 
+	            frameborder="0" 
+	            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+	            referrerpolicy="strict-origin-when-cross-origin" 
+	            allowfullscreen>
+	    </iframe>
+	</div>
+
+    <br/>
+    <br/>
+	    
+        <h3><p style="color:black;font-size:0.9em; font-family: 'Times New Roman';font-weight: normal;">
+        </p></h3>
+            <br/>
+    <br/><p id="Quantitative_results_1"></p>
+    </div>
+    </div>
+
+
+    <div class="container is-max-desktop content">
+        <h2 class="title">BibTeX</h2>
+        <pre><code>@inproceedings{jinoptimizing,
+        title={Optimizing 4D Gaussians for Dynamic Scene Video from Single Landscape Images},
+        author={Jin, In-Hwan and Choo, Haesoo and Jeong, Seong-Hun and Heemoon, Park and Kim, Junghwan and Kwon, Oh-joon and Kong, Kyeongbo},
+        booktitle={The Thirteenth International Conference on Learning Representations},
+        year={2025}
+    }</code></pre>
+      </div>
+    
+      <br/>
+    <br/>
+    <!-- <div style="border: 2px solid rgb(209, 206, 206); border-radius: 15px; padding: 10px;width:1100px; margin:auto;box-shadow: 1px 1px 2px 6px rgb(209, 206, 206)">
+    <div style="border: 2px solid white; border-radius: 15px; width:1000px; margin:auto;height: 200;"> -->
+        <br/>
+    <!-- <h2><p style="font-size:1.3em;text-align:center; font-family: 'Times New Roman';font-weight: normal;">Reference</p></h2> -->
+    <footer class="footer">
+    <div class="container is-max-desktop content">
+        <h2 class="title">Reference</h2>
+        [1] Xing, Jinbo, et al. "Dynamicrafter: Animating open-domain images with video diffusion priors." European Conference on Computer Vision. Springer, Cham, 2025.<br/>
+        [2] Shi, Xiaoyu, et al. "Motion-i2v: Consistent and controllable image-to-video generation with explicit motion modeling." ACM SIGGRAPH 2024 Conference Papers. 2024.<br/>
+        [3] Shen, Liao, et al. "Make-it-4d: Synthesizing a consistent long-term dynamic scene video from a single image." Proceedings of the 31st ACM International Conference on Multimedia. 2023. <br/>
+        [4] Li, Xingyi, et al. "3d cinemagraphy from a single image." Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition. 2023.<br/>
+        [5] Chung, Jaeyoung, et al. "Luciddreamer: Domain-free generation of 3d gaussian splatting scenes." arXiv preprint arXiv:2311.13384 (2023).<br/>
+        [6] Yu, Wangbo, et al. "Viewcrafter: Taming video diffusion models for high-fidelity novel view synthesis." arXiv preprint arXiv:2409.02048 (2024).<br/>
+        [7] Lee, Y. C., Chen, Y. T., Wang, A., Liao, T. H., Feng, B. Y., & Huang, J. B. (2024). VividDream: Generating 3D Scene with Ambient Dynamics. arXiv preprint arXiv:2405.20334.<br/>
+        [8] Mahapatra, Aniruddha, et al. "Text-guided synthesis of eulerian cinemagraphs." ACM Transactions on Graphics (TOG) 42.6 (2023): 1-13.<br/>
+        [9] Fan, Siming, et al. "Simulating fluids in real-world still images." Proceedings of the IEEE/CVF International Conference on Computer Vision. 2023.<br/>
+        [10] Choi, Jongwoo, et al. "StyleCineGAN: Landscape Cinemagraph Generation using a Pre-trained StyleGAN." Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition. 2024.<br/>
+        [11] Yang, Ziyi, et al. "Deformable 3d gaussians for high-fidelity monocular dynamic scene reconstruction." Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition. 2024.<br/>
+        [12] Wu, Guanjun, et al. "4d gaussian splatting for real-time dynamic scene rendering." Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition. 2024.
+
+		<script type="text/javascript" id="mmvst_globe" src="//mapmyvisitors.com/globe.js?d=0RSvwBz9pe-USmsK6FGzvvG8mnz2nL5KJ8xjAe0Acdo"></script>
+
+        <h3>
+			<p style="color:black;font-size:0.9em; font-family: 'Times New Roman';font-weight: normal;">
+        </p>
+		</h3>
+
+		<br/>
+    	<br/><p id="Quantitative_results_1"></p>
+	  </div>
+    </footer>
+
+
+
+
+
+	    
+</body>
+</html>
+
+<script>
+    function plusSlides(n, slideshowId) {
+        showSlides(slideIndex[slideshowId] += n, slideshowId);
+    }
+
+    function showSlides(n, slideshowId) {
+        let i;
+        let slides = document.querySelectorAll(`#${slideshowId} .video-slide`);
+        if (n >= slides.length) {
+            slideIndex[slideshowId] = 0;
+        } else if (n < 0) {
+            slideIndex[slideshowId] = slides.length - 1;
+        }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].classList.remove('active');
+        }
+        slides[slideIndex[slideshowId]].classList.add('active');
+    }
+
+    let slideIndex = {};
+    document.querySelectorAll('.slideshow-container').forEach(container => {
+        let id = container.id;
+        slideIndex[id] = 0;
+        showSlides(slideIndex[id], id);
+    });
+</script>
